@@ -1,0 +1,30 @@
+.go-back{
+    float: right;
+}
+
+.register{
+    height: 100vh;
+
+}
+
+.lg-form{
+    background-color: white;
+    padding-right: 1em;
+    padding-left: 1em;
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+    height: 25em;
+    border-radius: 5px;
+    min-width: 400px;
+}
+
+.img-wrap{
+    background-image: url('../../../assets/img/login.jpg');
+    background-size: cover;
+}
+
+.slider{
+    background-color: yellow;
+    width: 100%;
+}
