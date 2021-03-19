@@ -82,7 +82,7 @@ nav{
 
 .main-page{
     background: rgb(0,0,0);
-    height: 1600px;
+    height: 900px;
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(31,30,30,1) 0%, rgba(1,1,1,1) 100%);
 }
 
@@ -92,27 +92,37 @@ nav{
 }
 
 .offer-box{
-    background-color: whitesmoke;
     height: 350px;
     border-radius: 15px;
     padding: 2rem;
     background-image: url("../../assets/img/login.jpg");
     background-size: cover;
-    filter: brightness(85%);
+    filter: brightness(100%);
     transition: filter .5s; 
-
-
 }
 
 .title{
     color: white;
     font-size: 3rem;
+    font-weight: 700;
+    transition: font-size .5s;
+    margin-top: 5rem;
+}
+
+
+.item{
+    min-width: 350px;
 }
 
 
 .offer-box:hover{
-    border: 1px solid black;
-    filter: brightness(100%);
+    border: 2px solid white;
+    filter: brightness(90%);
+}
+
+.offer-box:hover .title{
+    font-size: 3.2rem;
+
 }
 
 @media only screen and (max-width: 600px) {
