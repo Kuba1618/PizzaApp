@@ -137,3 +137,28 @@ nav{
         padding-top: 1rem;
     }
   }
+footer{
+      width: 100%;
+      background: whitesmoke;
+  }
+.footer-headline{
+      font-weight: 700;
+  }
+
+  footer ul {
+      list-style: none;
+      padding-left: 0!important;
+  }
+
+  footer ul li{
+      padding-bottom: .2rem;
+  }
+
+  .footer-rights{
+      width: 100%;
+      background-color: black;
+  }
+
+  .cpy{
+      font-size: .7rem;
+  }
