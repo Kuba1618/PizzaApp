@@ -1,12 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light py-0 navbar-height-setting">
   <div class="container-fluid">
+    
     <a class="navbar-brand py-0" routerLink=''>
+      
         <h1><span class="logo">Pizza</span>App</h1>
     </a>
+    
     <div class="user-and-item justify-content-end py-0 p-4">
       <div class="navbar-items">
         
-          <a class="nav-link-user" aria-current="page" routerLink='/register' title="Zaloguj się lub utwórz konto">
+          <a class="nav-link-user" aria-current="page" (click)="toRegister()" [routerLink]="['register']"  title="Zaloguj się lub utwórz konto">
             <i class="far fa-user"></i>
           </a>  
                  
@@ -15,7 +18,6 @@
   </div>
 </nav>
 <app-menu-list></app-menu-list>
-<section class="main-page">
     <div class="slider-content">
 <ngb-carousel *ngIf="images">
   <ng-template ngbSlide>
@@ -38,28 +40,31 @@
   </ng-template>
 </ngb-carousel>  
 </div>
-
+<section class="main-offerts">
 <div class="ofert-section">
 <div class="container">
   <div class="row align-items-center text-center">
     <div class="col-md-4 pb-2 item">
       <div class="align-items-center offer-box">
        
-       <h1 class="box text-uppercase title"><span>Menu Pizza</span></h1>
+       <h1 class="box text-uppercase title"><p class="shadow">Menu Pizza</p></h1>
       </div>
     </div>
     <div class="col-md-4 pb-2 item">
       <div class="align-items-center offer-box">
-        <h1 class="box text-uppercase title">Dania obiadowe</h1>
+        <h1 class="box text-uppercase title"><p class="shadow">Dania obiadowe</p></h1>
       </div>
     </div>
     <div class="col-md-4 pb-2 item">
       <div class="align-items-center offer-box">
-        <h1 class="text-uppercase title">Napoje</h1>
+        <h1 class="text-uppercase title"><p class="shadow">Napoje</p></h1>
       </div>
     </div>
   </div>
 </div>
 </div>
 </section>
+<router-outlet id="register"></router-outlet>
+
+
 

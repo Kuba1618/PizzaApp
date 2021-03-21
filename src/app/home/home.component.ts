@@ -14,4 +14,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toRegister(){
+    setTimeout(() =>{
+      document.getElementById("register")?.scrollIntoView();
+    })
+    
+  }
+
 }
