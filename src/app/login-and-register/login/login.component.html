@@ -9,17 +9,17 @@
                 <div class="lg-form">
                     <div class="row">
                         <h1 class="logIn py-2 text-center text-uppercase">Zaloguj się</h1>
-                        <form>
+                        <form [formGroup]="loginForm">
                             <div class="form-group">
                                 <label class="login-label">Login </label>
-                                <input type="text"  class="form-control" required>
+                                <input type="text"  class="form-control" formControlName="login" required>
                             </div>
                             <div class="form-group">
                                 <label class="login-label">Hasło </label>
-                                <input type="password"  class="form-control" required>
+                                <input type="password"  class="form-control" formControlName="password" required>
 
                                 <div class="login pt-2">
-                                <button   class="btn btn-primary">
+                                <button   class="btn btn-primary"  [disabled]="!loginForm.valid" (click)="onSubmit()">
                                     Zaloguj
                                 </button>
                                 

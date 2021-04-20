@@ -9,30 +9,35 @@
             <div class="lg-form">
                 <div class="row">
                     <h1 class="logIn py-2 text-center text-uppercase">Utwórz konto</h1>
-                    <form>
+                    <form [formGroup]="registerForm">
                         <div class="form-group">
                             <label class="login-label">Login </label>
-                            <input type="text"  class="form-control" required>
+                            <input type="text"  formControlName="login" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label class="login-label">E-mail </label>
-                            <input type="email"  class="form-control" required>
+                            <input type="email" formControlName="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label class="login-label">Hasło </label>
-                            <input type="password"  class="form-control" required>
+                            <input type="password" formControlName="password" class="form-control" required>
                         
                         
                             <p>Masz juz konto? <a routerLink='/home/login'>Zaloguj się</a></p>
+
+                            <p *ngIf="isRegistered">Twoje konto zostało utworzone, za 5 sekund zostaniesz przekierowany na strone główną.</p>
                         
                         
-                            <button   class="btn btn-primary">
+                            <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="createNewUser()">
                                 Utwórz konto
                             </button>
+
+                            
                            
                         
                     </div>
                     </form>
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                 </div>
             </div>
           </div>

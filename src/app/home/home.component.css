@@ -1,9 +1,13 @@
-.fa-user{
+.fa-user,
+.fa-shopping-basket,
+.fa-sign-in-alt
+{
     color: black;
     font-size: 1.6em;
     padding-right: 1em;
     margin-top: .3rem;
     transition: color .5s;
+    cursor: pointer;
 }
 
 .fa-shopping-cart{
@@ -14,6 +18,8 @@
 }
 
 .fa-user:hover,
+.fa-shopping-basket:hover,
+.fa-sign-in-alt:hover
 .fa-shopping-cart:hover{
     color: red;
 }
