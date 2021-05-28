@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {  HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './card/card/card.component';
 import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
@@ -19,6 +19,7 @@ import { ProductItemComponent } from './shoppingcart/product-list/product-item/p
 import { AdminComponent } from './admin/admin.component';
 import { ListComponent } from './admin/list/list.component';
 import { CreateComponent } from './admin/create/create.component';
+import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 'angularx-social-login';
 
 
 
@@ -44,7 +45,22 @@ import { CreateComponent } from './admin/create/create.component';
     NgbModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SocialAuthService,
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              'Google-Client-ID-Goes-Here'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
