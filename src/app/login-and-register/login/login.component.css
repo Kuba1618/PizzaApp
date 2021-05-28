@@ -22,7 +22,7 @@
     position: relative;
     top: 40%;
     transform: translateY(-50%);
-    height: 25em;
+    min-height: 500px;
     border-radius: 5px;
     min-width: 400px;
 }
@@ -46,4 +46,11 @@
     font-weight: 700;
     margin-top: 1rem;
     text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+button{
+    width: 100%;
+    margin-bottom: 5px;
 }

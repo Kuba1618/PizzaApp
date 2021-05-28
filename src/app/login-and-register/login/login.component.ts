@@ -1,7 +1,9 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Users } from 'src/app/User/Users';
+import { Router } from '@angular/router';
+import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -13,21 +15,42 @@ export class LoginComponent implements OnInit {
   users: any;
 
 
-  loginForm = this.formBuilder.group({
-    login: ['', [Validators.required, Validators.minLength(6)]],
+  credentials = this.formBuilder.group({
+    username: ['', [Validators.required, Validators.minLength(6)]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   })
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthenticationService, private router: Router, private socialAuthService: SocialAuthService) { }
 
   ngOnInit(): void {
 
   }
 
-  onSubmit() {
+  async logIn() {
+    const loginData = {
+      username: this.credentials.controls.username.value,
+      password: this.credentials.controls.password.value,
+    };
+    this.authService.login(loginData).subscribe(
+      async () => {
+        this.router.navigate(['home']);
+        setTimeout(() => {
+          this.onActive()
+        })
 
+        console.log('zalogowano')
+      },
+      async (res) => {
+      }
+    );
   }
 
+  onActive() {
+    window.scroll(0, 0)
+  }
 
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
+  }
 
 }

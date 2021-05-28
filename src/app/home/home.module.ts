@@ -6,6 +6,7 @@ import { RegisterComponent } from '../login-and-register/register/register.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from '../card/card/card.component';
+import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 'angularx-social-login';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CardComponent } from '../card/card/card.component';
     HttpClientModule
   ],
   providers: [
+
   ]
 })
 export class HomeModule { }

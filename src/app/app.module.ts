@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {  HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './card/card/card.component';
 import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
@@ -16,6 +16,7 @@ import { ProductListComponent } from './shoppingcart/product-list/product-list.c
 import { CartComponent } from './shoppingcart/cart/cart.component';
 import { CartItemComponent } from './shoppingcart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './shoppingcart/product-list/product-item/product-item.component';
+import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 'angularx-social-login';
 
 
 
@@ -38,7 +39,22 @@ import { ProductItemComponent } from './shoppingcart/product-list/product-item/p
     NgbModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SocialAuthService,
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              'Google-Client-ID-Goes-Here'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
