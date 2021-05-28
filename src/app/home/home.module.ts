@@ -5,7 +5,6 @@ import { LoginComponent } from '../login-and-register/login/login.component';
 import { RegisterComponent } from '../login-and-register/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { UserService } from '../services/user.service';
 import { CardComponent } from '../card/card/card.component';
 
 
@@ -23,7 +22,6 @@ import { CardComponent } from '../card/card/card.component';
     HttpClientModule
   ],
   providers: [
-    UserService
   ]
 })
 export class HomeModule { }

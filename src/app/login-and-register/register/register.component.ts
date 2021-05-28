@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { iif, Observable } from 'rxjs';
-import { UserService } from 'src/app/services/user.service';
 import { Users } from 'src/app/User/Users';
 
 @Component({
@@ -23,29 +22,26 @@ export class RegisterComponent implements OnInit {
   })
 
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { 
-    
+  constructor(private formBuilder: FormBuilder, private router: Router) {
+
   }
 
   ngOnInit(): void {
-    
+
   }
 
-    createNewUser(){
-        localStorage.setItem('user', 'dawid')
-        this.userService.isLogged(true);
-        this.router.navigate(['home']);
-        setTimeout(()=>{
-          this.onActive()
-        })
-        
-        
-        
-    }
+  createNewUser() {
 
-    onActive(){
-      window.scroll(0,0)
-    }
 
-    
+    this.router.navigate(['home']);
+    setTimeout(() => {
+      this.onActive()
+    })
+  }
+
+  onActive() {
+    window.scroll(0, 0)
+  }
+
+
 }

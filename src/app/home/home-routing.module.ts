@@ -9,15 +9,16 @@ import { ShoppingcartComponent } from '../shoppingcart/shoppingcart.component';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, children: [
-    { path: 'register', component: RegisterComponent},
-    { path: 'login', component: LoginComponent} 
-  ]},
-  { path: 'card', component: CardComponent, canActivate: [AuthGuard]},
-  { path: 'burgermenu', component : BurgerMenuComponent},
-  { path: 'login', component: LoginComponent},
-  {path: 'menu', component: ShoppingcartComponent}
-  ];
+  {
+    path: '', component: HomeComponent, children: [
+      { path: 'register', component: RegisterComponent },
+      { path: 'login', component: LoginComponent }
+    ]
+  },
+  { path: 'card', component: ShoppingcartComponent, canActivate: [AuthGuard] },
+  { path: 'burgermenu', component: BurgerMenuComponent },
+  { path: 'login', component: LoginComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
