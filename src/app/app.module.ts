@@ -10,6 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './card/card/card.component';
 import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { FiltersComponent } from './shoppingcart/filters/filters.component';
+import { ProductListComponent } from './shoppingcart/product-list/product-list.component';
+import { CartComponent } from './shoppingcart/cart/cart.component';
+import { CartItemComponent } from './shoppingcart/cart/cart-item/cart-item.component';
+import { ProductItemComponent } from './shoppingcart/product-list/product-item/product-item.component';
+
 
 
 @NgModule({
@@ -17,8 +24,13 @@ import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
     AppComponent,
     HomeComponent,
     MenuListComponent,
-    BurgerMenuComponent
-
+    BurgerMenuComponent,
+    ShoppingcartComponent,
+    FiltersComponent,
+    ProductListComponent,
+    CartComponent,
+    CartItemComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
