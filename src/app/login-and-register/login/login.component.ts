@@ -12,6 +12,7 @@ import { Users } from 'src/app/User/Users';
 export class LoginComponent implements OnInit {
 
   users: any;
+  
 
   loginForm = this.formBuilder.group({
     login: ['', [Validators.required, Validators.minLength(6)]],
@@ -25,17 +26,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.userService.logIn(this.formBuilder).subscribe(
+    this.userService.logIn(this.loginForm).subscribe(
       (res) =>{
-        
         this.users = res
-        console.log(this.users.login == this.loginForm.get(['login']))
-
+         console.log(res)
       }, (err) =>{
         console.log(err);
       }
-
     )
   }
+
+ 
 
 }

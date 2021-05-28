@@ -27,10 +27,7 @@ export class UserService {
   }
 
   logIn(credentials: any):Observable<any>{
-    return this.webService.post('login', {
-      login: credentials.login,
-      password: credentials.password
-    })
+    return this.webService.get('users')
   }
 
   isLogged(il: boolean){

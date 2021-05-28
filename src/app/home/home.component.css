@@ -66,8 +66,13 @@ h3{
     font-weight: 500;
 }
 
+.navbar-brand h1{
+    font-family: "Brush Script MT", cursive; font-style: italic; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
+
 .logo{
     color: red;
+    
 }
 
 nav{
@@ -95,7 +100,7 @@ nav{
     background-color: black;
     height: 100%;
     padding-bottom: 7rem;
-    margin-bottom: 7rem;
+
 }
 
 .offer-box{
@@ -107,6 +112,7 @@ nav{
     background-size: cover;
     filter: brightness(100%);
     transition: filter .5s; 
+    cursor: pointer;
 }
 
 .title{
@@ -115,6 +121,7 @@ nav{
     font-weight: 700;
     transition: font-size .5s;
     margin-top: 5rem;
+    background: none;
 }
 
 

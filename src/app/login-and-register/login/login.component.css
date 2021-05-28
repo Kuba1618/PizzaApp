@@ -1,6 +1,7 @@
 .register-section{
     background-color: white;
-    padding-bottom: 7rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
     padding-left: .7rem;
     padding-right: .7rem;
 }
@@ -39,4 +40,10 @@
 
 .back-to-register{
     float: right;
+}
+
+.login-to-continue{
+    font-weight: 700;
+    margin-top: 1rem;
+    text-align: center;
 }

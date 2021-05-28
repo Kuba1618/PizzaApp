@@ -2,6 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { LoginComponent } from '../login-and-register/login/login.component';
 import { UserService } from '../services/user.service';
 
 @Injectable({
@@ -18,9 +19,16 @@ export class AuthGuard implements CanActivate {
           return true;
       }else{
         console.log('Nie masz dostepu');
-        this.router.navigate(['home'])
+        this.router.navigate(['home/login'])
+        setTimeout(() =>{
+          this.scroll()
+        })
+        
         return false;  
       }
   }
-  
+
+  scroll() {
+    document.querySelector('#lgSc')?.scrollIntoView({ behavior: 'smooth', block: 'center'})
+  }
 }

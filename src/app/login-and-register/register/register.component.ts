@@ -32,20 +32,15 @@ export class RegisterComponent implements OnInit {
   }
 
     createNewUser(){
-      this.user = this.registerForm.value
-      this.userService.createUser(this.user).subscribe((res) =>{
-        this.isRegistered = true;
-        localStorage.setItem('user', JSON.stringify(this.userService.user.login))
+        localStorage.setItem('user', 'dawid')
         this.userService.isLogged(true);
-        setTimeout( () =>{
-          this.router.navigate(['home']);
+        this.router.navigate(['home']);
+        setTimeout(()=>{
           this.onActive()
-        }, 5000)
+        })
         
-          
-      }, (err)=>{
-        console.log(err);
-      })
+        
+        
     }
 
     onActive(){

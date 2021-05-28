@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './card/card/card.component';
 import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
-import { PizzaListComponent } from './pizza-list/pizza-list.component';
 
 
 @NgModule({
@@ -18,8 +17,7 @@ import { PizzaListComponent } from './pizza-list/pizza-list.component';
     AppComponent,
     HomeComponent,
     MenuListComponent,
-    BurgerMenuComponent,
-    PizzaListComponent,
+    BurgerMenuComponent
 
   ],
   imports: [
