@@ -7,6 +7,9 @@ import { LoginComponent } from '../login-and-register/login/login.component';
 import { RegisterComponent } from '../login-and-register/register/register.component';
 import { ShoppingcartComponent } from '../shoppingcart/shoppingcart.component';
 import { HomeComponent } from './home.component';
+import { AdminComponent } from '../admin/admin.component';
+import { ListComponent } from '../admin/list/list.component';
+import { CreateComponent } from '../admin/create/create.component';
 
 const routes: Routes = [
   {
@@ -17,7 +20,11 @@ const routes: Routes = [
   },
   { path: 'card', component: ShoppingcartComponent, canActivate: [AuthGuard] },
   { path: 'burgermenu', component: BurgerMenuComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'admin', loadChildren: () => 
+  import('../admin/admin.module').then((m)=> m.AdminModule)
+},
+  
 ];
 
 @NgModule({

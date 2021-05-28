@@ -16,6 +16,9 @@ import { ProductListComponent } from './shoppingcart/product-list/product-list.c
 import { CartComponent } from './shoppingcart/cart/cart.component';
 import { CartItemComponent } from './shoppingcart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './shoppingcart/product-list/product-item/product-item.component';
+import { AdminComponent } from './admin/admin.component';
+import { ListComponent } from './admin/list/list.component';
+import { CreateComponent } from './admin/create/create.component';
 
 
 
@@ -30,7 +33,10 @@ import { ProductItemComponent } from './shoppingcart/product-list/product-item/p
     ProductListComponent,
     CartComponent,
     CartItemComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    AdminComponent,
+    ListComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
