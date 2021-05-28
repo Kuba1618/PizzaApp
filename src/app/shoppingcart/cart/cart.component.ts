@@ -9,9 +9,7 @@ import {MessangerService} from 'src/app/services/messanger.service'
 })
 export class CartComponent implements OnInit {
 
-  cartItems = [
-    
-  ];
+  cartItems:any[] = [];
 
   cartTotal = 0
 

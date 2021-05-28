@@ -9,7 +9,7 @@ import {MessangerService} from 'src/app/services/messanger.service'
 })
 export class ProductItemComponent implements OnInit {
 
-  @Input() productItem: Product
+  @Input() productItem: any
 
   constructor(private msg: MessangerService) {
 
