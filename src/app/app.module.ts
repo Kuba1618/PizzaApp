@@ -43,7 +43,9 @@ import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
