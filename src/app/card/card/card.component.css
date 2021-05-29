@@ -1,0 +1,15 @@
+button{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.pay{
+    height: 100vh;
+    background:  url('../../../assets/img/pizza-wallpaper.jpg') no-repeat fixed;
+    background-size: cover;
+    color: white;
+}
+
+.container{
+    padding-top: 5rem;
+}

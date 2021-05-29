@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   { path: 'card', component: ShoppingcartComponent, canActivate: [AuthGuard] },
   { path: 'burgermenu', component: BurgerMenuComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'pay', component: CardComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

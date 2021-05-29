@@ -16,7 +16,7 @@ import { ProductListComponent } from './shoppingcart/product-list/product-list.c
 import { CartComponent } from './shoppingcart/cart/cart.component';
 import { CartItemComponent } from './shoppingcart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './shoppingcart/product-list/product-item/product-item.component';
-import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 
 
 
@@ -31,29 +31,30 @@ import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 
     ProductListComponent,
     CartComponent,
     CartItemComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
-    HttpClientModule
+    SocialLoginModule
   ],
-  providers: [
-    {
-      provide: SocialAuthService,
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              'Google-Client-ID-Goes-Here'
-            )
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '865832044144-ekoq4auel7846g1lvt86j55jmgjucfei.apps.googleusercontent.com'
+          )
+        }
+      ]
+    } as SocialAuthServiceConfig,
+  }
   ],
   bootstrap: [AppComponent]
 })

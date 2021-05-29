@@ -46,3 +46,34 @@ footer ul li{
 .cpy{
     font-size: .7rem;
 }
+
+.fa-user,
+.fa-shopping-basket,
+.fa-sign-in-alt
+{
+    color: black;
+    font-size: 1.6em;
+    padding-right: 1em;
+    margin-top: .3rem;
+    transition: color .5s;
+    cursor: pointer;
+}
+
+.fa-shopping-cart{
+    color: black;
+    font-size: 1.4em;
+    padding-right: 1em;
+    transition: color .5s;
+}
+
+
+.header{background:rgb(0, 178, 255);color:#fff;}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-left: -20px;
+}

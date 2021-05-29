@@ -6,7 +6,10 @@ import { RegisterComponent } from '../login-and-register/register/register.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from '../card/card/card.component';
-import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { MenuListComponent } from '../menu-list/menu-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartItemComponent } from '../shoppingcart/cart/cart-item/cart-item.component';
 
 
 @NgModule({
@@ -23,7 +26,7 @@ import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 
     HttpClientModule
   ],
   providers: [
-
-  ]
+  ],
+  bootstrap: [HomeModule]
 })
 export class HomeModule { }

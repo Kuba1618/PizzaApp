@@ -5,6 +5,7 @@ import { SocialAuthService } from 'angularx-social-login';
 import { Observable } from 'rxjs';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import { AuthenticationService } from '../services/authentication.service';
+import { OrderService } from '../services/order.service';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,10 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class HomeComponent implements OnInit {
 
-  images = ['../../assets/img/first.jpg', '../../assets/img/second.jpg', '../../assets/img/first.jpg'];
   isLoggedUser: any;
-  constructor(private config: NgbCarouselConfig, private authService: AuthenticationService, private socialAuthService: SocialAuthService) {
+  cartTotal: any;
+  amount: any;
+  constructor(private config: NgbCarouselConfig, private authService: AuthenticationService, private socialAuthService: SocialAuthService, private orderService: OrderService) {
     config.interval = 10000;
     config.wrap = false;
     config.keyboard = false;
@@ -27,6 +29,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isAuthenticated.subscribe((res) => {
       this.isLoggedUser = res;
+    })
+
+    this.orderService.amountToPay.subscribe((res) => {
+      this.cartTotal = res;
     })
   }
 

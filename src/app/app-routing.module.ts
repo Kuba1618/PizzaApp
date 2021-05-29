@@ -7,11 +7,9 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', loadChildren: () => 
-                  import('./home/home.module').then((m)=> m.HomeModule)
-                },
-  { path: 'shoppingcart', component: ShoppingcartComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', loadChildren: () => import('./home/home.module').then((m) => m.HomeModule) },
+  { path: 'shoppingcart', component: ShoppingcartComponent }
 ];
 
 @NgModule({

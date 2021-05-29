@@ -14,11 +14,13 @@
           <i class="far fa-user"></i>
         </a>
 
-        <a class="nav-link-user" aria-current="page" [routerLink]="['card']" title="Zakupy" *ngIf="isLoggedUser">
+        <a class="nav-link-user" aria-current="page" [routerLink]="['pay']" title="Koszyk" *ngIf="isLoggedUser">
           <i class="fas fa-shopping-basket"></i>
+          <label ID="lblCartCount" runat="server" CssClass="badge badge-warning" ForeColor="White">{{cartTotal}}
+            zł.</label>
         </a>
 
-        <a class="nav-link-user" aria-current="page" *ngIf="isLoggedUser" title="Zamówienia" (click)="logOut()">
+        <a class="nav-link-user" aria-current="page" *ngIf="isLoggedUser" title="Wyloguj" (click)="logOut()">
           <i class="fas fa-sign-in-alt"></i>
         </a>
 
@@ -28,10 +30,10 @@
 </nav>
 <app-menu-list></app-menu-list>
 <div class="slider-content">
-  <ngb-carousel *ngIf="images">
+  <ngb-carousel>
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <img [src]="images[0]" alt="Random first slide">
+        <img src="../../assets/img/pizza-wallpaper.jpg" alt="Random first slide">
       </div>
       <div class="carousel-caption">
         <h3 class="text-uppercase">Nie czekaj! Zamów u nas przepyszną Margherite</h3>
@@ -40,7 +42,7 @@
     </ng-template>
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <img [src]="images[1]" alt="Random second slide">
+        <img src="../../assets/img/first.jpg" style="filter: brightness(70%)" alt="Random second slide">
       </div>
       <div class="carousel-caption">
         <h3 class="text-uppercase">Dowozy do 10km GRATIS!</h3>
@@ -54,9 +56,11 @@
   <div class="ofert-section">
     <div class="container">
       <div class="row align-items-center text-center">
+
+        <h2 class="title-top">Wasze ulubione</h2>
+
         <div class="col-md-4 pb-2 item">
           <div class="align-items-center offer-box" [routerLink]="['pizzalist']">
-
             <h1 class="box text-uppercase title" x>
               <p class="shadow">Menu Pizza</p>
             </h1>

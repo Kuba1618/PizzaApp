@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (!localStorage.getItem('user')) {
+    if (localStorage.getItem('my-token')) {
       return true;
     } else {
       console.log('Nie masz dostepu');
