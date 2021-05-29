@@ -10,6 +10,10 @@
         <label>Opis Pizzy</label>
         <textarea class="form-control col-md-12" formControlName="description" rows="3" required></textarea>
     </div>
+    <div class="form-group">
+        <label>Cena</label>
+        <input type="text" formControlName="price" class="form-control col-md-12" required>
+    </div>
 
         <button class="btn btn-primary" 
             (click)="createPizza()">

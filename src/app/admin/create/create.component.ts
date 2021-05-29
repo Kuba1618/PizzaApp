@@ -14,7 +14,8 @@ export class CreateComponent implements OnInit {
 
   credentials = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
-    description: ['', [Validators.required, Validators.minLength(5)]]
+    description: ['', [Validators.required, Validators.minLength(5)]],
+    price: ['', [Validators.required, Validators.minLength(1)]]
   })
 
   constructor(private formBuilder: FormBuilder,private pizzaAddService: PizzaAddService) { }
@@ -25,7 +26,9 @@ export class CreateComponent implements OnInit {
   async createPizza() {
     const pizzaData = {
       name: this.credentials.controls.name.value,
-      description: this.credentials.controls.description.value
+      description: this.credentials.controls.description.value,
+      price: this.credentials.controls.price.value
+
     };
     this.pizzaAddService.addPizza(pizzaData).subscribe(
       async () => {

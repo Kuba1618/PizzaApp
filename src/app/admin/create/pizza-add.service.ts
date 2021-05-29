@@ -15,7 +15,7 @@ export class PizzaAddService{
 
     constructor(private http: HttpClient) {}
 
-    addPizza(data: { name: any; description: any;}) {
+    addPizza(data: { name: any; description: any; price: any}) {
         return this.http.post(`${this.baseUrl}/pizza/add`, data);
       }
 

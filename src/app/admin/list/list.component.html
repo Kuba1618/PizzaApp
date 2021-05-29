@@ -5,6 +5,7 @@
       <tr>
         <th scope="col">Nazwa Pizzy</th>
         <th scope="col">Opis Pizzy</th>
+        <th scope="col">Cena</th>
         <th scope="col">Opcje</th>
       </tr>
     </thead>
@@ -12,6 +13,7 @@
       <tr *ngFor="let pizza of pizzas">
         <td>{{pizza.name}}</td>
         <td>{{pizza.description}}</td>
+        <td>{{pizza.price}}</td>
         <td> <button type="button" (click)="delete(pizza.id)" class="btn btn-outline-dark">Usuń</button></td>
       </tr>
     </tbody>
