@@ -17,6 +17,10 @@ import { CartComponent } from './shoppingcart/cart/cart.component';
 import { CartItemComponent } from './shoppingcart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './shoppingcart/product-list/product-item/product-item.component';
 import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { AdminComponent } from './admin/admin.component';
+import { ListComponent } from './admin/list/list.component';
+import { CreateComponent } from './admin/create/create.component';
+
 
 
 
@@ -32,14 +36,19 @@ import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig, Social
     CartComponent,
     CartItemComponent,
     ProductItemComponent,
-    CartComponent
+    CartComponent,
+    AdminComponent,
+    ListComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    SocialLoginModule
+    SocialLoginModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

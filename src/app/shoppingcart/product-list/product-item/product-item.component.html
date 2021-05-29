@@ -1,5 +1,5 @@
-<div class="card mb-4 shadow-sm">
-    <img class="bd-placeholder-img card-img-top p-2" width="100%" [src]="productItem.imageUrl"/>
+<div class="card mb-4 shadow-sm" style="max-height: 500px; min-height: 500px;">
+    <img class="bd-placeholder-img card-img-top p-2" width="100%" src="https://ocs-pl.oktawave.com/v1/AUTH_876e5729-f8dd-45dd-908f-35d8bb716177/amrest-web-ordering/Pizza%20Hut%20PL/NEW%20WWW/500px_center_margherita-min.jpg"/>
 
     <div class="card-body">
         <p class="card-text"><strong>{{productItem.name}}</strong></p>
@@ -9,7 +9,7 @@
           <button 
           type="button" class="btn btn-sm btn-outline-primary" (click)="handleAddToCart()">
           Dodaj do koszyka</button>
-        </div>
+          </div>
         <p class="card-text"><strong>{{ productItem.price | currency: 'PLN'}}</strong></p>
       </div>
     </div>
