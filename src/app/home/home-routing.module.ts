@@ -10,6 +10,7 @@ import { HomeComponent } from './home.component';
 import { AdminComponent } from '../admin/admin.component';
 import { ListComponent } from '../admin/list/list.component';
 import { CreateComponent } from '../admin/create/create.component';
+import { ContactComponent } from '../contact/contact.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'burgermenu', component: BurgerMenuComponent },
   { path: 'pay', component: CardComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'contact', component: ContactComponent },
   {
     path: 'admin', loadChildren: () =>
       import('../admin/admin.module').then((m) => m.AdminModule), canActivate: [AuthGuard]
