@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs'
+import { BehaviorSubject, Subject } from 'rxjs'
+import { __values } from 'tslib';
 import { Product } from '../models/product';
 
 @Injectable({
@@ -8,14 +9,15 @@ import { Product } from '../models/product';
 export class MessangerService {
 
   subject = new Subject<Product>()
-
+  item: BehaviorSubject<Product> = new BehaviorSubject<any>(null)
   constructor() { }
 
-  sendMsg(product: any){
-  this.subject.next(product)
+  sendMsg(product: any) {
+    this.subject.next(product)
+
   }
 
-  getMsg(){
+  getMsg() {
     return this.subject.asObservable()
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-menu-list',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuListComponent implements OnInit {
 
-  constructor() { }
+  isEnable: boolean = false;
+
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.authService.isAdmin.subscribe((res) => {
+      this.isEnable = res;
+      console.log(res)
+    })
   }
 
 }

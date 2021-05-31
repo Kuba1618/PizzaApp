@@ -55,59 +55,38 @@
 <section class="main-offerts">
   <div class="ofert-section">
     <div class="container">
-      <div class="row align-items-center text-center">
+      <div class="row">
+        <h2 class="title-top">Wasze ulubione:</h2>
+        <ul *ngIf="pizzas" class="list-inline">
+          <li *ngFor="let pizza of pizzas" class="list-inline-item">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="../../assets/img/first.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">{{ pizza.name }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="desc">
+                    {{ pizza.description }}
+                  </div>
+                  <small class="text-muted">{{ pizza.price | currency: 'PLN'}}</small>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
 
-        <h2 class="title-top">Wasze ulubione</h2>
-
-        <div class="col-md-4 pb-2 item">
-          <div class="align-items-center offer-box" [routerLink]="['pizzalist']">
-            <h1 class="box text-uppercase title" x>
-              <p class="shadow">Menu Pizza</p>
-            </h1>
-          </div>
-        </div>
-        <div class="col-md-4 pb-2 item">
-          <div class="align-items-center offer-box">
-            <h1 class="box text-uppercase title">
-              <p class="shadow">Dania obiadowe</p>
-            </h1>
-          </div>
-        </div>
-        <div class="col-md-4 pb-2 item">
-          <div class="align-items-center offer-box">
-            <h1 class="text-uppercase title">
-              <p class="shadow">Napoje</p>
-            </h1>
-          </div>
-        </div>
-        <div class="col-md-4 pb-2 item" [routerLink]="['burgermenu']" routerLinkActive="router-link-active">
-          <div class="align-items-center offer-box">
-            <h1 class="text-uppercase title">
-              <p class="shadow">Burger</p>
-            </h1>
-          </div>
-        </div>
-        <div class="col-md-4 pb-2 item">
-          <div class="align-items-center offer-box">
-            <h1 class="text-uppercase title">
-              <p class="shadow">Desery</p>
-            </h1>
-          </div>
-        </div>
-        <div class="col-md-4 pb-2 item">
-          <div class="align-items-center offer-box">
-            <h1 class="text-uppercase title">
-              <p class="shadow">Inne</p>
-            </h1>
-          </div>
-        </div>
-
+        <hr>
+        <h2 class="here">Tutaj nas znajdziesz!</h2>
       </div>
     </div>
   </div>
+
 </section>
 <router-outlet id="register"></router-outlet>
-
+<div class="container-to-map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2517.4276135388836!2d20.637867015963725!3d50.87879556428818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471827be35849801%3A0x99149978917cac90!2sPolitechnika%20%C5%9Awi%C4%99tokrzyska!5e0!3m2!1spl!2spl!4v1622442695894!5m2!1spl!2spl"
+    frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+</div>
 
 
 <footer>

@@ -18,6 +18,8 @@ export class OrderService {
     Product
   );
 
+  filter: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
   constructor(private http: HttpClient) { }
 
   getAllPizza() {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap, switchMap } from 'rxjs/operators';
-import { BehaviorSubject, from, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, from, Observable, ReplaySubject, Subject } from 'rxjs';
 import jwt_decode from 'jwt-decode';
 import { IUser } from '../User/I-user';
 import { User } from '../User/user'
@@ -18,10 +18,16 @@ export class AuthenticationService {
   isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     !null
   );
+  isAdmin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false
+  )
   private token = '';
 
   constructor(private http: HttpClient, private userService: UserService) {
     this.loadToken();
+
+    if (localStorage.getItem('admin')) {
+      this.isAdmin.next(true)
+    }
   }
 
   async loadToken() {
@@ -53,6 +59,8 @@ export class AuthenticationService {
 
   logout() {
     this.isAuthenticated.next(false);
+    this.isAdmin.next(false);
+    localStorage.removeItem('admin')
     return localStorage.removeItem('my-token');
   }
 

@@ -13,9 +13,9 @@
       <a class="item" href="#">Na wynos</a>
     </li>
     <li class="list-item">
-      <a class="item" href="#">Kontakt</a>
+      <a class="item" [routerLink]="['/contact']">Kontakt</a>
     </li>
-    <li class="list-item">
+    <li class="list-item" *ngIf="isEnable">
       <a class="item" [routerLink]="['/home/admin']" routerLinkActive="router-link-active">Panel Admina</a>
     </li>
   </ul>

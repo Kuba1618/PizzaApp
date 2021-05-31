@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-filters',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltersComponent implements OnInit {
 
-  constructor() { }
+  searchPrice = '';
+
+  constructor(private formBuilder: FormBuilder, private orderService: OrderService) { }
 
   ngOnInit(): void {
+
+  }
+
+  filter() {
+    this.orderService.filter.next(this.searchPrice)
   }
 
 }

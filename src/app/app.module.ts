@@ -20,6 +20,8 @@ import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig, Social
 import { AdminComponent } from './admin/admin.component';
 import { ListComponent } from './admin/list/list.component';
 import { CreateComponent } from './admin/create/create.component';
+import { ContactComponent } from './contact/contact.component';
+import { FilterPipe } from './shoppingcart/filters/filter.pipe';
 
 
 
@@ -39,7 +41,9 @@ import { CreateComponent } from './admin/create/create.component';
     CartComponent,
     AdminComponent,
     ListComponent,
-    CreateComponent
+    CreateComponent,
+    ContactComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
