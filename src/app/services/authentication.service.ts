@@ -46,8 +46,14 @@ export class AuthenticationService {
       map((data: any) => data.accessToken),
       tap((token) => {
         this.token = token;
-        localStorage.setItem('my-token', this.token);
         this.generateAndStoreUserDetails(this.token);
+        localStorage.setItem('my-token', this.token);
+        this.userService.getUserDetails().roles.forEach(role => {
+          if(role==="ROLE_ADMIN"){
+            localStorage.setItem('admin', 'admin')
+            this.isAdmin.next(true)
+          }
+        });
         this.isAuthenticated.next(true);
       })
     );
