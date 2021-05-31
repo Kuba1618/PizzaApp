@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit {
   productsList: Product[] = [];
   pizzas: Pizza[] = [];
   searchPrice: any;
+  searchName!: string;
 
   constructor(private productService: ProductService, private pizzaService: PizzaService, private orderService: OrderService) { }
 
@@ -24,6 +25,9 @@ export class ProductListComponent implements OnInit {
     this.getPizzaList()
     this.orderService.filter.subscribe((res) => {
       this.searchPrice = res;
+    })
+    this.orderService.filterName.subscribe((res) => {
+      this.searchName = res;
     })
   }
 

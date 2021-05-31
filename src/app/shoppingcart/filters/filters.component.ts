@@ -10,7 +10,7 @@ import { OrderService } from '../../services/order.service';
 export class FiltersComponent implements OnInit {
 
   searchPrice = '';
-
+  searchName = '';
   constructor(private formBuilder: FormBuilder, private orderService: OrderService) { }
 
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class FiltersComponent implements OnInit {
 
   filter() {
     this.orderService.filter.next(this.searchPrice)
+    this.orderService.filterName.next(this.searchName)
   }
 
 }
