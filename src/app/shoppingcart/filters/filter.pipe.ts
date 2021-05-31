@@ -1,21 +1,23 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { filter } from 'rxjs/operators';
+import { Pizza } from 'src/app/models/pizza';
 
 @Pipe({
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any[], serchValue: number): any {
+  transform(value: Pizza[], serchValue: number): any {
 
-    if (!serchValue || !value) {
+    
+    if (!serchValue || value?.length < 1) {
       return value;
     }
 
 
-    return value.filter(v => {
-      v.price == serchValue
-    })
+    return value.filter(v => 
+      +v.price >= serchValue
+  )
 
   }
 

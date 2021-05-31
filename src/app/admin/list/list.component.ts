@@ -20,9 +20,9 @@ export class ListComponent implements OnInit {
     this.getPizzaList();
   }
 
-  private async getPizzaList() {
+  private getPizzaList() {
   this.pizzaService.getAllPizzas().subscribe(
-    async(res)=>{
+    (res)=>{
       this.pizzas=res;
     },
     async(err)=>{
@@ -30,9 +30,13 @@ export class ListComponent implements OnInit {
     }
   )
   };
+
   delete(id: any){
-    console.log(id)
-    this.pizzaService.deletePizza(id);
+    this.pizzaService.deletePizza(id).subscribe(
+      () => this.getPizzaList(),
+      () => this.getPizzaList(),
+      () => this.getPizzaList()
+    );
   }
 
 

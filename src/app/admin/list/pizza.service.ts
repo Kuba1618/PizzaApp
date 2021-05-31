@@ -16,7 +16,7 @@ export class PizzaService{
     return this.http.get<Pizza[]>(`${this.baseUrl}/pizza/get`);
   }
 
-  public deletePizza(id: any) {
-    return this.http.post(`${this.baseUrl}/pizza/delete`, id);
+  public deletePizza(id: string) {
+    return this.http.delete(`${this.baseUrl}/pizza/delete/${id}`);
   }
 }
