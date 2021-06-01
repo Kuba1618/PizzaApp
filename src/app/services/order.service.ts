@@ -19,6 +19,7 @@ export class OrderService {
   );
 
   filter: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  filterName: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private http: HttpClient) { }
 
