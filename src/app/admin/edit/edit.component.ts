@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { PizzaEditService } from './pizza-edit.service'
 
 @Component({
   selector: 'app-edit',
@@ -8,17 +9,37 @@ import { FormBuilder } from '@angular/forms';
 })
 export class EditComponent implements OnInit {
 
-  credentials = this.formGroup.group({
-    name: '',
-    description: '',
-    price: ''
+  private id: string = '60b50de4f06d3a46d422e1f6';
+
+  credentials = this.formBuilder.group({
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    description: ['', [Validators.required, Validators.minLength(5)]],
+    price: ['', [Validators.required, Validators.minLength(1)]]
   })
-  
-  constructor(private formGroup: FormBuilder) { }  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private pizzaEditService: PizzaEditService
+  ) { }
+
+  ngOnInit(): void {
+
   }
-  
-  editPizza() {
+
+  submit(){
+    const pizzaData = {
+      name: this.credentials.controls.name.value,
+      description: this.credentials.controls.description.value,
+      price: this.credentials.controls.price.value
+    };
+    console.log(this.credentials.value)
+    this.pizzaEditService.editPizza(pizzaData, this.id).subscribe((res) => {
+
+    }, (err) => {
+
+    });
+
+
   }
 
 

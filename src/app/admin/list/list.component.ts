@@ -10,8 +10,6 @@ import { Pizza } from 'src/app/models/pizza';
 })
 export class ListComponent implements OnInit {
   pizzas: Pizza[]=[];
-  private id: string = '';
-
 
   constructor(
     private pizzaService: PizzaService
@@ -39,9 +37,4 @@ export class ListComponent implements OnInit {
       () => this.getPizzaList()
     );
   }
-
-  sendId(id:any){
-    
-  }
-
 }

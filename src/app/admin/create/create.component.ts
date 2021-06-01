@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Pizza } from 'src/app/models/pizza';
-import { PizzaAddService } from './pizza-add.service';
+import { PizzaAddService } from './pizza-add.service'
 
 
 
@@ -19,7 +18,11 @@ export class CreateComponent implements OnInit {
     price: ['', [Validators.required, Validators.minLength(1)]]
   })
 
-  constructor(private formBuilder: FormBuilder, private pizzaAddService: PizzaAddService, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private pizzaAddService: PizzaAddService, 
+    private router: Router
+     ) { }
 
   ngOnInit(): void {
 
@@ -29,7 +32,6 @@ export class CreateComponent implements OnInit {
       name: this.credentials.controls.name.value,
       description: this.credentials.controls.description.value,
       price: this.credentials.controls.price.value
-
     };
     this.pizzaAddService.addPizza(pizzaData).subscribe((res) => {
 
@@ -40,8 +42,5 @@ export class CreateComponent implements OnInit {
     this.router.navigate(['home/admin/list'])
 
 
-  }
-  onActive() {
-    window.location.reload();
   }
 }
