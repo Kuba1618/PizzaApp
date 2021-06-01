@@ -13,14 +13,8 @@
         <td>{{pizza.name}}</td>
         <td>{{pizza.description}}</td>
         <td>{{pizza.price}}</td>
-        <td> <button type="button" class="btn btn-dark mr-3" (click)="sendId(pizza.id)" [routerLink]="['/home/admin/edit']">Edytuj</button>
+        <td> <button type="button" class="btn btn-dark mr-3" [routerLink]="['/home/admin/edit', pizza.id]">Edytuj</button>
           <button type="button" (click)="delete(pizza.id)" class="btn btn-danger mr-0">Usuń</button></td>
-      </tr>
-      <tr>
-        <td><input type="text" class="form-label col-md-8" value="{{pizza.name}}"></td>
-        <td><input type="text" class="form-label col-md-12" value="{{pizza.description}}"></td>
-        <td><input type="text" class="form-label col-md-4" value="{{pizza.price}}"></td>
-        <td><button type="button"  class="btn btn-success mr-3">Zakualizuj</button></td>
       </tr>
     </tbody>
   </table>
