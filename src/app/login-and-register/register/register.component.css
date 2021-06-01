@@ -22,7 +22,6 @@
     position: relative;
     top: 40%;
     transform: translateY(-50%);
-    height: 25em;
     border-radius: 5px;
     min-width: 300px;
 }

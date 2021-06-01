@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { MessangerService } from 'src/app/services/messanger.service'
+import { convertToObject } from 'typescript';
 import { OrderService } from '../../services/order.service';
 
 @Component({
@@ -54,6 +55,7 @@ export class CartComponent implements OnInit {
       this.cartTotal += (item.qty * item.price)
       this.orderService.amountToPay.next(this.cartTotal)
     })
+
   }
 
 }

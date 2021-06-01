@@ -10,13 +10,14 @@ import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig, Social
 import { MenuListComponent } from '../menu-list/menu-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartItemComponent } from '../shoppingcart/cart/cart-item/cart-item.component';
+import { ContactComponent } from '../contact/contact.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     CommonModule,

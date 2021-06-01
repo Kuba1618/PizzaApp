@@ -11,6 +11,7 @@ import { AdminComponent } from '../admin/admin.component';
 import { ListComponent } from '../admin/list/list.component';
 import { CreateComponent } from '../admin/create/create.component';
 import { ContactComponent } from '../contact/contact.component';
+import { AuthAdminGuard } from '../guards/auth-admin.guard';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   {
     path: 'admin', loadChildren: () =>
-      import('../admin/admin.module').then((m) => m.AdminModule), canActivate: [AuthGuard]
+      import('../admin/admin.module').then((m) => m.AdminModule), canActivate: [AuthGuard, AuthAdminGuard]
   },
 
 ];

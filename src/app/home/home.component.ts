@@ -4,6 +4,8 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { SocialAuthService } from 'angularx-social-login';
 import { Observable } from 'rxjs';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
+import { PizzaService } from '../admin/list/pizza.service';
+import { Pizza } from '../models/pizza';
 import { AuthenticationService } from '../services/authentication.service';
 import { OrderService } from '../services/order.service';
 
@@ -18,7 +20,9 @@ export class HomeComponent implements OnInit {
   isLoggedUser: any;
   cartTotal: any;
   amount: any;
-  constructor(private config: NgbCarouselConfig, private authService: AuthenticationService, private socialAuthService: SocialAuthService, private orderService: OrderService) {
+  pizzas: Pizza[] = [];
+
+  constructor(private config: NgbCarouselConfig, private pizzaService: PizzaService, private authService: AuthenticationService, private socialAuthService: SocialAuthService, private orderService: OrderService) {
     config.interval = 10000;
     config.wrap = false;
     config.keyboard = false;
@@ -30,6 +34,9 @@ export class HomeComponent implements OnInit {
     this.authService.isAuthenticated.subscribe((res) => {
       this.isLoggedUser = res;
     })
+
+    this.getPizzaList()
+    console.log(this.pizzas)
 
     this.orderService.amountToPay.subscribe((res) => {
       this.cartTotal = res;
@@ -48,7 +55,18 @@ export class HomeComponent implements OnInit {
   logOut() {
     this.authService.logout();
     this.socialAuthService.signOut();
-
+    this.authService.isAdmin.next(false)
   }
 
+  private async getPizzaList() {
+    this.pizzaService.getAllPizzas().subscribe(
+      async (res) => {
+        this.pizzas = res;
+      },
+      async (err) => {
+        console.log('Nie udalo sie pobrac listy pizzy')
+      }
+    )
+
+  }
 }

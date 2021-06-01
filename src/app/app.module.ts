@@ -21,6 +21,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ListComponent } from './admin/list/list.component';
 import { CreateComponent } from './admin/create/create.component';
 import { ContactComponent } from './contact/contact.component';
+import { FilterPipe } from './shoppingcart/filters/filter.pipe';
+import { FilterNamePipe } from './shoppingcart/filters/filter-name.pipe';
 
 
 
@@ -41,7 +43,9 @@ import { ContactComponent } from './contact/contact.component';
     AdminComponent,
     ListComponent,
     CreateComponent,
-    ContactComponent
+    ContactComponent,
+    FilterPipe,
+    FilterNamePipe
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaService } from './pizza.service';
 import { Pizza } from 'src/app/models/pizza';
-import { async } from '@angular/core/testing';
+
 
 @Component({
   selector: 'app-list',
@@ -12,6 +12,7 @@ export class ListComponent implements OnInit {
   pizzas: Pizza[]=[];
   private id: string = '';
 
+
   constructor(
     private pizzaService: PizzaService
   ) { }
@@ -20,9 +21,9 @@ export class ListComponent implements OnInit {
     this.getPizzaList();
   }
 
-  private async getPizzaList() {
+  private getPizzaList() {
   this.pizzaService.getAllPizzas().subscribe(
-    async(res)=>{
+    (res)=>{
       this.pizzas=res;
     },
     async(err)=>{
@@ -30,14 +31,17 @@ export class ListComponent implements OnInit {
     }
   )
   };
+
   delete(id: any){
-    console.log(id)
-    this.pizzaService.deletePizza(id);
+    this.pizzaService.deletePizza(id).subscribe(
+      () => this.getPizzaList(),
+      () => this.getPizzaList(),
+      () => this.getPizzaList()
+    );
   }
 
-
-
-  
-
+  sendId(id:any){
+    
+  }
 
 }
