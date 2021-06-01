@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  credentials = this.formGroup.group({
+    name: '',
+    description: '',
+    price: ''
+  })
+  
+  constructor(private formGroup: FormBuilder) { }  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+  
+  editPizza() {
+  }
+
 
 }
