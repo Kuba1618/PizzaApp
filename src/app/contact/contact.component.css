@@ -1,0 +1,231 @@
+.fa-user,
+.fa-shopping-basket,
+.fa-sign-in-alt
+{
+    color: black;
+    font-size: 1.6em;
+    padding-right: 1em;
+    margin-top: .3rem;
+    transition: color .5s;
+    cursor: pointer;
+}
+
+.fa-shopping-cart{
+    color: black;
+    font-size: 1.4em;
+    padding-right: 1em;
+    transition: color .5s;
+}
+
+.fa-user:hover,
+.fa-shopping-basket:hover,
+.fa-sign-in-alt:hover
+.fa-shopping-cart:hover{
+    color: red;
+}
+
+.title-top{
+    margin-top: 8rem!important;
+    font-size: 4rem!important;
+    color: rgb(22, 21, 21);
+    text-align: left;
+}
+
+.picsum-img-wrapper img{
+    width: 100%;
+    height: 450px;
+    filter: brightness(100%);
+    transition: filter .5s;
+}
+
+.picsum-img-wrapper img:hover{
+    filter: brightness(80%);
+}
+
+.picsum-img-wrapper{
+    outline: none;
+}
+
+ngb-carousel{
+    width: 100%;
+}
+
+ngb-carousel:focus{
+    outline: none;
+    border: 0;
+}
+
+h3{
+    font-size: 2em;
+}
+
+.carousel-caption p{
+    font-size: 1.4em;
+}
+
+.text-slider{
+    justify-content: center;
+    text-align: center;
+}
+
+.slider{
+    font-size: 1em!important;
+    font-weight: 500;
+}
+
+.navbar-brand h1{
+    font-family: "Brush Script MT", cursive; font-style: italic; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
+
+.logo{
+    color: red;
+    
+}
+
+nav{
+    border-bottom: 1px solid rgba(97, 97, 97, .4)
+}
+
+.main-page{
+    height: 50rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-content{
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.shadow{
+    text-shadow: 2px 2px 15px black;
+}
+
+
+.main-offerts{
+    background-color: whitesmoke;
+    height: 100%;
+    padding-bottom: 7rem;
+
+}
+
+.offer-box{
+    margin-top: 7rem;
+    height: 350px;
+    border-radius: 15px;
+    padding: 2rem;
+    background: url("../../assets/img/login.jpg") center fixed;
+    background-size: cover;
+    filter: brightness(100%);
+    transition: filter .5s; 
+    cursor: pointer;
+}
+
+.title{
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    transition: font-size .5s;
+    margin-top: 5rem;
+    background: none;
+}
+
+
+.item{
+    min-width: 350px;
+}
+
+
+.offer-box:hover{
+    border: 2px solid white;
+    filter: brightness(90%);
+}
+
+.offer-box:hover .title{
+    font-size: 3.2rem;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .offer-box{
+      min-width: 300px;  
+  
+    }
+
+    .col{
+        padding-top: 1rem;
+    }
+  }
+footer{
+      width: 100%;
+      background: white;
+  }
+.footer-headline{
+      font-weight: 700;
+  }
+
+  footer ul {
+      list-style: none;
+      padding-left: 0!important;
+  }
+
+  footer ul li{
+      padding-bottom: .2rem;
+  }
+
+  .footer-rights{
+      width: 100%;
+      background-color: black;
+  }
+
+  .cpy{
+      font-size: .7rem;
+  }
+
+  
+.header{background:rgb(0, 178, 255);color:#fff;}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-left: -20px;
+}
+
+.container-list{
+    border-bottom: 1px solid rgba(145, 141, 141, 0.5);
+
+}
+ul, li {
+	display: block;
+	list-style: none;
+    list-style-position: inside;
+}
+
+ul{
+    padding-left: 2rem;
+    overflow: auto;
+    
+}
+
+a{
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-right: 1.4rem;
+    float: left;
+    color: black;
+    transition: color .5s;
+    cursor: pointer;
+}
+
+a:hover{
+    color: red;
+    outline: none;
+    text-decoration: 0;
+}
+
+
