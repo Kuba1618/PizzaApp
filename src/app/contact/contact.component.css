@@ -195,3 +195,8 @@ footer{
     margin-left: -20px;
 }
 
+.container-to-map{
+    width: 100%;
+    height: 450px;
+    margin-top: 0;
+}
