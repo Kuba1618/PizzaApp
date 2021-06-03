@@ -200,3 +200,14 @@ footer{
     height: 450px;
     margin-top: 0;
 }
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    background-color: #fff;
+}
+
