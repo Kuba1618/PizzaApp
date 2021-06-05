@@ -49,3 +49,6 @@ nav{
     background-color: #fff;
 }
 
+.navbar-brand h1{
+    font-family: "Brush Script MT", cursive; font-style: italic; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
