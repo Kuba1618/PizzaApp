@@ -52,3 +52,32 @@ nav{
 .navbar-brand h1{
     font-family: "Brush Script MT", cursive; font-style: italic; font-variant: normal; font-weight: 700; line-height: 26.4px;
 }
+
+.about-data{
+    float: left;
+    margin-left: 5%;
+    margin-top: 4%;
+    text-align: center;
+}
+
+#clear{
+    clear:both;
+}
+
+h3{
+    font-size:larger;
+}
+
+h4{
+    color:rgb(255, 0, 0);
+}
+
+h6 { font-weight:normal; }
+
+.u-m0{
+    font-size: 14px;
+}
+
+ul li{
+    text-decoration: none;
+}
