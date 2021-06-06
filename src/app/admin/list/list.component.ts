@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaService } from './pizza.service';
 import { Pizza } from 'src/app/models/pizza';
-import { async } from '@angular/core/testing';
+
 
 @Component({
   selector: 'app-list',
@@ -10,7 +10,6 @@ import { async } from '@angular/core/testing';
 })
 export class ListComponent implements OnInit {
   pizzas: Pizza[]=[];
-  private id: string = '';
 
   constructor(
     private pizzaService: PizzaService
@@ -38,10 +37,4 @@ export class ListComponent implements OnInit {
       () => this.getPizzaList()
     );
   }
-
-
-
-  
-
-
 }
