@@ -11,6 +11,7 @@ export class FiltersComponent implements OnInit {
 
   searchPrice = '';
   searchName = '';
+  searchTo = '';
   constructor(private formBuilder: FormBuilder, private orderService: OrderService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class FiltersComponent implements OnInit {
   filter() {
     this.orderService.filter.next(this.searchPrice)
     this.orderService.filterName.next(this.searchName)
+    this.orderService.filterTo.next(this.searchTo)
   }
 
 }

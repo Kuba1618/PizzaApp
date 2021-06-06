@@ -9,12 +9,14 @@ import { OrderService } from '../../../services/order.service';
 })
 export class CartItemComponent implements OnInit {
 
-  @Input() cartItem: any
+  @Input() cartItem: any;
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, private mssgService: MessangerService) { }
 
   ngOnInit(): void {
-
+    this.orderService.products.subscribe((res) => {
+      console.log(res)
+    })
   }
 
 }

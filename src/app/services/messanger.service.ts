@@ -14,7 +14,6 @@ export class MessangerService {
 
   sendMsg(product: any) {
     this.subject.next(product)
-
   }
 
   getMsg() {

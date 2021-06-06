@@ -15,7 +15,6 @@ export class MenuListComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isAdmin.subscribe((res) => {
       this.isEnable = res;
-      console.log(res)
     })
   }
 
