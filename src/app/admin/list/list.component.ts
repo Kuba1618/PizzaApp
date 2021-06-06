@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaService } from './pizza.service';
 import { Pizza } from 'src/app/models/pizza';
+import {MessangerService } from 'src/app/services/messanger.service'
 
 
 @Component({
@@ -10,9 +11,12 @@ import { Pizza } from 'src/app/models/pizza';
 })
 export class ListComponent implements OnInit {
   pizzas: Pizza[]=[];
+  selectedPizzaId!: string;
+  isEdit = false;
 
   constructor(
-    private pizzaService: PizzaService
+    private pizzaService: PizzaService,
+    private messangerService: MessangerService
   ) { }
 
   ngOnInit() {
@@ -37,4 +41,9 @@ export class ListComponent implements OnInit {
       () => this.getPizzaList()
     );
   }
+
+  getPizzaId(id:any){
+    this.messangerService.sendId(id)
+  } 
+
 }

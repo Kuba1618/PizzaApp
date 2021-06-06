@@ -8,6 +8,8 @@ import { Product } from '../models/product';
 })
 export class MessangerService {
 
+
+  idsend: any;
   subject = new Subject<Product>()
   item: BehaviorSubject<Product> = new BehaviorSubject<any>(null)
   constructor() { }
@@ -19,5 +21,12 @@ export class MessangerService {
 
   getMsg() {
     return this.subject.asObservable()
+  }
+
+  sendId(id:any){
+    this.idsend=id;
+  }
+  getId(){
+    return this.idsend;
   }
 }

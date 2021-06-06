@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Pizza } from 'src/app/models/pizza';
+import { MessangerService } from 'src/app/services/messanger.service';
 import { PizzaEditService } from './pizza-edit.service'
 
 @Component({
@@ -9,21 +12,38 @@ import { PizzaEditService } from './pizza-edit.service'
 })
 export class EditComponent implements OnInit {
 
-  private id: string = '60b50de4f06d3a46d422e1f6';
+  private id: string = '';
+  pizzas: any;
 
-  credentials = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    description: ['', [Validators.required, Validators.minLength(5)]],
-    price: ['', [Validators.required, Validators.minLength(1)]]
-  })
+
+  credentials: any;
 
   constructor(
     private formBuilder: FormBuilder,
-    private pizzaEditService: PizzaEditService
+    private pizzaEditService: PizzaEditService,
+    private router: Router,
+    private messangerService: MessangerService
   ) { }
 
   ngOnInit(): void {
+    this.id=this.messangerService.getId();
+    this.pizzaEditService.getSelected(this.id).subscribe(
+      (res)=>{
+        this.pizzas=res;
+        this.createForm();
+      },
+      async(err)=>{
+        console.log('Nie udalo sie pobrac pizzy')
+      }
+    )
+  }
 
+  private createForm(){
+    this.credentials = this.formBuilder.group({
+      name: [this.pizzas.name, [Validators.required, Validators.minLength(3)]],
+      description: [this.pizzas.description, [Validators.required, Validators.minLength(5)]],
+      price: [this.pizzas.price, [Validators.required, Validators.minLength(1)]]
+    })
   }
 
   submit(){
@@ -32,13 +52,12 @@ export class EditComponent implements OnInit {
       description: this.credentials.controls.description.value,
       price: this.credentials.controls.price.value
     };
-    console.log(this.credentials.value)
     this.pizzaEditService.editPizza(pizzaData, this.id).subscribe((res) => {
 
     }, (err) => {
 
     });
-
+    this.router.navigate(['home/admin/list'])
 
   }
 
