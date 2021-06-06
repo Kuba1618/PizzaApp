@@ -7,9 +7,6 @@ import { LoginComponent } from '../login-and-register/login/login.component';
 import { RegisterComponent } from '../login-and-register/register/register.component';
 import { ShoppingcartComponent } from '../shoppingcart/shoppingcart.component';
 import { HomeComponent } from './home.component';
-import { AdminComponent } from '../admin/admin.component';
-import { ListComponent } from '../admin/list/list.component';
-import { CreateComponent } from '../admin/create/create.component';
 import { ContactComponent } from '../contact/contact.component';
 import { AuthAdminGuard } from '../guards/auth-admin.guard';
 

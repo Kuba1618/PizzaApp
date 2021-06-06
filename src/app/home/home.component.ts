@@ -18,9 +18,11 @@ import { OrderService } from '../services/order.service';
 export class HomeComponent implements OnInit {
 
   isLoggedUser: any;
+  clickForMoreOptions = false;
   cartTotal: any;
   amount: any;
-  pizzas: Pizza[] = [];
+  popularPizzas: Pizza[] = [];
+  pizzas: Pizza[] = []
 
   constructor(private config: NgbCarouselConfig, private pizzaService: PizzaService, private authService: AuthenticationService, private socialAuthService: SocialAuthService, private orderService: OrderService) {
     config.interval = 10000;
@@ -34,13 +36,12 @@ export class HomeComponent implements OnInit {
     this.authService.isAuthenticated.subscribe((res) => {
       this.isLoggedUser = res;
     })
-
-    this.getPizzaList()
-    console.log(this.pizzas)
-
     this.orderService.amountToPay.subscribe((res) => {
       this.cartTotal = res;
     })
+
+    this.getPopularPizzaList()
+    this.getPizzaList()
   }
 
   ngOnChanges(): void {
@@ -68,5 +69,15 @@ export class HomeComponent implements OnInit {
       }
     )
 
+  }
+
+  getPopularPizzaList() {
+    this.orderService.getPopularPizza().subscribe((res) => {
+      this.popularPizzas = res;
+    })
+  }
+
+  getAllPizzaOptions() {
+    this.clickForMoreOptions = true;
   }
 }

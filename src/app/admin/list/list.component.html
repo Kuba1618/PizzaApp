@@ -13,7 +13,7 @@
         <td>{{pizza.name}}</td>
         <td>{{pizza.description}}</td>
         <td>{{pizza.price}}</td>
-        <td> <button type="button" class="btn btn-dark mr-3" [routerLink]="['/home/admin/edit', pizza.id]">Edytuj</button>
+        <td> <button type="button" class="btn btn-dark mr-3" (click)="getPizzaId(pizza.id)" [routerLink]="['/home/admin/edit']">Edytuj</button>
           <button type="button" (click)="delete(pizza.id)" class="btn btn-danger mr-0">Usuń</button></td>
       </tr>
     </tbody>
