@@ -7,6 +7,7 @@ import { IUser } from '../User/I-user';
 import { User } from '../User/user'
 import { UserService } from '../User/user.service';
 import { environment } from 'src/environments/environment';
+import { OrderService } from './order.service';
 
 const TOKEN_KEY = 'my-token';
 
@@ -22,7 +23,7 @@ export class AuthenticationService {
   )
   private token = '';
 
-  constructor(private http: HttpClient, private userService: UserService) {
+  constructor(private http: HttpClient, private userService: UserService, private orderService: OrderService) {
     this.loadToken();
 
     if (localStorage.getItem('admin')) {
@@ -46,10 +47,13 @@ export class AuthenticationService {
       map((data: any) => data.accessToken),
       tap((token) => {
         this.token = token;
+        if (!localStorage.getItem('amount')) {
+          this.orderService.amountToPay.next(0)
+        }
         this.generateAndStoreUserDetails(this.token);
         localStorage.setItem('my-token', this.token);
         this.userService.getUserDetails().roles.forEach(role => {
-          if(role==="ROLE_ADMIN"){
+          if (role === "ROLE_ADMIN") {
             localStorage.setItem('admin', 'admin')
             this.isAdmin.next(true)
           }
@@ -67,6 +71,7 @@ export class AuthenticationService {
     this.isAuthenticated.next(false);
     this.isAdmin.next(false);
     localStorage.removeItem('admin')
+    localStorage.removeItem('amount')
     return localStorage.removeItem('my-token');
   }
 

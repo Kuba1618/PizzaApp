@@ -1,26 +1,34 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { UserService } from '../User/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthAdminGuard implements CanActivate {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) {
+
+  }
+
+
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (localStorage.getItem('admin')) {
-      return true;
-    } else {
-      this.router.navigate([''])
-      console.log('nie jestes adminem')
+    var roleType = '';
 
+    this.userService.getUserDetails().roles.forEach(role => {
+      roleType = role;
+    })
+
+    if (roleType == "ROLE_ADMIN") return true;
+    else {
+      this.router.navigate([''])
       return false;
     }
-  }
 
+  }
 }

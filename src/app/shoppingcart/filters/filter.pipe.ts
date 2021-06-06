@@ -7,18 +7,18 @@ import { Pizza } from 'src/app/models/pizza';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: Pizza[], serchValue: number): any {
+  transform(value: Pizza[], serchValue: number, searchValueTo: number): any {
 
-    
     if (!serchValue || value?.length < 1) {
       return value;
     }
 
+    if (!searchValueTo || value?.length < 1) {
+      return value;
+    }
 
-    return value.filter(v => 
-      +v.price >= serchValue
-  )
-
+    return value.filter(v =>
+      +v.price >= serchValue && +v.price <= searchValueTo
+    )
   }
-
 }

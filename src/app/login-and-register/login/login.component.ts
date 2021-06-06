@@ -53,10 +53,9 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((x) => {
       this.authService.isAuthenticated.next(true)
       localStorage.setItem('my-token', this.user.idToken)
+      this.router.navigate(['home'])
+      this.onActive()
 
-      setTimeout(() => {
-        this.onActive()
-      })
     })
 
   }
