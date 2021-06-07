@@ -67,7 +67,7 @@ nav{
 
 .icon{
     font-size: 47px;
-    color:rgb(224, 62, 89);
+    color:rgb(243, 79, 79);
 }
 
 #clear{
@@ -82,7 +82,27 @@ h4{
     color:rgb(255, 0, 0);
 }
 
-h6 { font-weight:normal; }
+/*h6 { font-weight:normal; }*/
+
+h6 {
+    font-weight:normal;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  h6:before, h6:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+  }
+  h6:before {
+    margin-right: 10px
+  }
+  h6:after {
+    margin-left: 10px
+  }
 
 .u-m0{
     font-size: 14px;
@@ -108,14 +128,10 @@ iframe{
 
 a:link
 {
-   color: rgb(100, 102, 100);
+   color: rgb(98, 98, 98);
    text-decoration: none;
 }
-
-a:visited
-{
-    color: rgb(100, 102, 100);
-}
+/*nie robić a:visited !!!! */
 
 a:hover
 {

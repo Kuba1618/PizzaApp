@@ -79,8 +79,7 @@ h3{
 }
 
 .logo{
-    color: red;
-    
+    color: red; 
 }
 
 nav{
@@ -195,16 +194,6 @@ footer{
     margin-left: -20px;
 }
 
-.container-to-map{
-    width: 100%;
-    height: 450px;
-    margin-top: 0;
-}
-
-iframe{
-    width: 100%;
-    height: 100%;
-}
 
 .card{
     width: 300px;
@@ -261,3 +250,45 @@ h6 {
     margin-left: 10px
   }
 
+  a:link
+  {
+     color: rgb(98, 98, 98);
+     text-decoration: none;
+  }
+  /*nie robić a:visited !!!! */
+  
+  a:hover
+  {
+     color: rgb(199, 31, 59); 
+  }
+  
+  a:active
+  {
+     color: red;
+  }
+
+#nav-contact{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-data{
+    float: left;
+    margin-left: 3.5%;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.icon{
+    font-size: 47px;
+    color:rgb(255, 30, 0);
+}
+
+#clear{
+    clear:both;
+}
+
+#komentarz{
+    font-size: 14px;;
+}
