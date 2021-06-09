@@ -23,6 +23,7 @@ import { CreateComponent } from './admin/create/create.component';
 import { ContactComponent } from './contact/contact.component';
 import { FilterPipe } from './shoppingcart/filters/filter.pipe';
 import { FilterNamePipe } from './shoppingcart/filters/filter-name.pipe';
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -45,7 +46,8 @@ import { FilterNamePipe } from './shoppingcart/filters/filter-name.pipe';
     CreateComponent,
     ContactComponent,
     FilterPipe,
-    FilterNamePipe
+    FilterNamePipe,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
