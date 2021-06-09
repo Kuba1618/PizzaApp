@@ -24,6 +24,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FilterPipe } from './shoppingcart/filters/filter.pipe';
 import { FilterNamePipe } from './shoppingcart/filters/filter-name.pipe';
 import { OrderComponent } from './order/order.component';
+import { GooglePayButtonModule } from '@google-pay/button-angular';
 
 
 
@@ -56,7 +57,8 @@ import { OrderComponent } from './order/order.component';
     NgbModule,
     SocialLoginModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GooglePayButtonModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',
