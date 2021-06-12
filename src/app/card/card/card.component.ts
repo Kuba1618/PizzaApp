@@ -58,8 +58,8 @@ export class CardComponent implements OnInit {
       totalPriceStatus: 'FINAL',
       totalPriceLabel: 'Total',
       totalPrice: '0.10',
-      currencyCode: 'USD',
-      countryCode: 'US'
+      currencyCode: 'PLN',
+      countryCode: 'PL'
     },
     callbackIntents: ['PAYMENT_AUTHORIZATION']
   };
