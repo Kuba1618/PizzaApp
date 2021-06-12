@@ -48,7 +48,8 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     ContactComponent,
     FilterPipe,
     FilterNamePipe,
-    OrderComponent
+    OrderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

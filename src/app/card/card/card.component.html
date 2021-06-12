@@ -35,9 +35,19 @@
                                 <input type="text" class="form-control" formControlName="houseNumber" required>
 
                                 <div class="login pt-2 mt-4">
-                                    <button class="btn btn-primary" [disabled]="!credentials.valid">
+                                    <!--<button class="btn btn-primary" [disabled]="!credentials.valid">
                                         Zapłać
-                                    </button>
+                                    </button> -->
+                                    <google-pay-button
+                                        environment="TEST"
+                                        buttonType="buy"
+                                        buttonColor="black"
+                                        [paymentRequest]="paymentRequest"
+                                        (loadpaymentdata)="onLoadPaymentData($event)"
+                                        (error)="onError($event)"
+                                        [paymentAuthorizedCallback]="onPaymentDataAuthorized"
+                                    >
+                                    </google-pay-button>
 
                                     <button class="btn btn-primary" [routerLink]="['/home']">
                                         Anuluj

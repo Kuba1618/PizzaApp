@@ -17,7 +17,6 @@ import { ContactComponent } from '../contact/contact.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    CardComponent,
   ],
   imports: [
     CommonModule,
