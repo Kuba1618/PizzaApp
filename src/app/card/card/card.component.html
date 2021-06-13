@@ -38,15 +38,9 @@
                                     <!--<button class="btn btn-primary" [disabled]="!credentials.valid">
                                         Zapłać
                                     </button> -->
-                                    <google-pay-button
-                                        environment="TEST"
-                                        buttonType="buy"
-                                        buttonColor="black"
-                                        [paymentRequest]="paymentRequest"
-                                        (loadpaymentdata)="onLoadPaymentData($event)"
-                                        (error)="onError($event)"
-                                        [paymentAuthorizedCallback]="onPaymentDataAuthorized"
-                                    >
+                                    <google-pay-button environment="TEST" buttonType="buy" buttonColor="black"
+                                        [paymentRequest]="paymentRequest" (loadpaymentdata)="onLoadPaymentData($event)"
+                                        (error)="onError($event)" [paymentAuthorizedCallback]="onPaymentDataAuthorized">
                                     </google-pay-button>
 
                                     <button class="btn btn-primary" [routerLink]="['/home']">

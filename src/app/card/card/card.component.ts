@@ -20,17 +20,18 @@ export class CardComponent implements OnInit {
     houseNumber: ['', [Validators.required, Validators.minLength(3)]],
   })
 
-  amount: any;
-
-  
+  amount = '';
+  amount2 = localStorage.getItem('amount')
 
   constructor(private formBuilder: FormBuilder, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.orderService.amountToPay.subscribe((res) => {
-      this.amount = res;
+      let tmp = JSON.stringify(res)
+      this.amount = tmp
     })
   }
+
   paymentRequest: google.payments.api.PaymentDataRequest = {
     apiVersion: 2,
     apiVersionMinor: 0,
@@ -57,7 +58,7 @@ export class CardComponent implements OnInit {
     transactionInfo: {
       totalPriceStatus: 'FINAL',
       totalPriceLabel: 'Total',
-      totalPrice: '0.10',
+      totalPrice: this.amount2 || '0',
       currencyCode: 'PLN',
       countryCode: 'PL'
     },
@@ -73,12 +74,12 @@ export class CardComponent implements OnInit {
 
   onPaymentDataAuthorized: google.payments.api.PaymentAuthorizedHandler = (
     paymentData
-    ) => {
-      console.log('payment authorized', paymentData);
-      return {
-        transactionState: 'SUCCESS'
-      };
-    }
+  ) => {
+    console.log('payment authorized', paymentData);
+    return {
+      transactionState: 'SUCCESS'
+    };
+  }
 
   onError = (event: ErrorEvent): void => {
     console.error('error', event.error);

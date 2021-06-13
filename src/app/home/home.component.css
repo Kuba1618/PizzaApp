@@ -157,8 +157,9 @@ nav{
     }
   }
 footer{
+        padding-top: 4rem;
       width: 100%;
-      background: white;
+      background: whitesmoke
   }
 .footer-headline{
       font-weight: 700;
@@ -291,4 +292,17 @@ h6 {
 
 #komentarz{
     font-size: 14px;;
+}
+
+.about-data-section{
+    width: 100%;
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.about-data-section ul{
+    list-style: none;
 }
