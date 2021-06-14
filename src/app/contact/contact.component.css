@@ -84,16 +84,33 @@ footer ul li{
 }
 
 .about-data{
-    float: left;
-    margin-left: 5%;
-    margin-top: 2%;
+    min-height: 300px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
     text-align: center;
+    padding: 2rem;
+}
+
+.about-data-section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.about-data-section ul{
+    list-style: none;
 }
 
 .icon{
-    font-size: 47px;
-    color:rgb(243, 79, 79);
+    font-size: 55px;
+    color:rgb(255, 30, 0);
 }
+
 
 #clear{
     clear:both;
