@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
+import { OrderService } from '../services/order.service';
 
 @Component({
   selector: 'app-contact',
@@ -6,34 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  authService: any;
-  socialAuthService: any;
-  isLoggedUser: any;
-  orderService: any;
   cartTotal: any;
-
-  constructor() { }
+  isLoggedUser!: boolean;
+  constructor(private authService: AuthenticationService, private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.authService.isAuthenticated.subscribe((res: any) => {
+    this.authService.isAuthenticated.subscribe((res) => {
       this.isLoggedUser = res;
+    }, (err) => {
+      console.log(err)
     })
 
-    this.orderService.amountToPay.subscribe((res: any) => {
+    this.orderService.amountToPay.subscribe((res) => {
       this.cartTotal = res;
     })
   }
 
-  toRegister() {
-    setTimeout(() => {
-      document.getElementById("register")?.scrollIntoView();
-    })
-  }
-
   logOut() {
-    this.authService.logout();
-    this.socialAuthService.signOut();
-
+    this.authService.logout()
   }
+
 
 }
