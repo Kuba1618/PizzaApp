@@ -9,6 +9,7 @@ import { ShoppingcartComponent } from '../shoppingcart/shoppingcart.component';
 import { HomeComponent } from './home.component';
 import { ContactComponent } from '../contact/contact.component';
 import { AuthAdminGuard } from '../guards/auth-admin.guard';
+import { DelieveryComponent } from '../delievery/delievery.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'pay', component: CardComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'delievery', component: DelieveryComponent },
   {
     path: 'admin', loadChildren: () =>
       import('../admin/admin.module').then((m) => m.AdminModule), canActivate: [AuthGuard, AuthAdminGuard]
