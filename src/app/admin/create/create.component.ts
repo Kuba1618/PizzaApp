@@ -15,7 +15,8 @@ export class CreateComponent implements OnInit {
   credentials = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     description: ['', [Validators.required, Validators.minLength(5)]],
-    price: ['', [Validators.required, Validators.minLength(1)]]
+    price: ['', [Validators.required, Validators.minLength(1)]],
+    urlAdress: ['', [Validators.required, Validators.minLength(1)]]
   })
 
   constructor(
@@ -31,7 +32,8 @@ export class CreateComponent implements OnInit {
     const pizzaData = {
       name: this.credentials.controls.name.value,
       description: this.credentials.controls.description.value,
-      price: this.credentials.controls.price.value
+      price: this.credentials.controls.price.value,
+      urlAdress: this.credentials.controls.urlAdress.value      
     };
     this.pizzaAddService.addPizza(pizzaData).subscribe((res) => {
 

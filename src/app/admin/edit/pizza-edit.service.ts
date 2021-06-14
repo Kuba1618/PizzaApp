@@ -15,7 +15,7 @@ export class PizzaEditService{
 
     constructor(private http: HttpClient) {}
 
-    editPizza(data: {name: any; description: any; price: any}, id: string){
+    editPizza(data: {name: any; description: any; price: any; urlAdress:any}, id: string){
         return this.http.patch(`${this.baseUrl}/pizza/update/${id}`, data);
     }
     getSelected(id:string):Observable<Pizza[]>{

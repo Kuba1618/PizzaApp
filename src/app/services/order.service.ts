@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { filter, map, tap, toArray } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { Pizza } from '../models/pizza';
-import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'

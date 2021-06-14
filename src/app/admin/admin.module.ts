@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -16,6 +17,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
   ],
 
-  declarations: [EditComponent]
+  declarations: [EditComponent, OrderComponent]
 })
 export class AdminModule { }

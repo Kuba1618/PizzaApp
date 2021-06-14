@@ -4,4 +4,5 @@ export interface Pizza{
     description: string;
     price: string;
     ownerID: string;
+    urlAdress: any;
 }
