@@ -1,9 +1,6 @@
 <section class="pay">
     <div class="container">
         <div class="row align-item-center">
-            <div class="col-sm">
-
-            </div>
             <div class="col-sm register">
                 <div class="lg-form">
                     <div class="row">
@@ -38,9 +35,11 @@
                                     <!--<button class="btn btn-primary" [disabled]="!credentials.valid">
                                         Zapłać
                                     </button> -->
+
                                     <google-pay-button environment="TEST" buttonType="buy" buttonColor="black"
-                                        [paymentRequest]="paymentRequest" (loadpaymentdata)="onLoadPaymentData($event)"
-                                        (error)="onError($event)" [paymentAuthorizedCallback]="onPaymentDataAuthorized">
+                                        buttonSizeMode="fill" [paymentRequest]="paymentRequest"
+                                        (loadpaymentdata)="onLoadPaymentData($event)" (error)="onError($event)"
+                                        [paymentAuthorizedCallback]="onPaymentDataAuthorized">
                                     </google-pay-button>
 
                                     <button class="btn btn-primary" [routerLink]="['/home']">
@@ -55,6 +54,24 @@
             </div>
             <div class="col-sm">
 
+            </div>
+            <div class="col-sm">
+                <h4 class="text-uppercase headline">Twoje zamówienie</h4>
+                <div *ngIf="cartItems.length === 0" class="alert alert-info mr-3">Koszyk pusty.</div>
+
+                <ul *ngIf="cartItems.length > 0" class="list-group mr-3">
+                    <li class="list-group-item" *ngFor="let item of cartItems">
+                        {{ item.productName }} x {{item.qty}} <span class="float-right"><strong>{{item.price}}
+                                PLN</strong></span>
+                    </li>
+
+                    <li class="list-group-item active">
+                        Koszt <span class="float-right"><strong class="price">{{amount}} PLN</strong></span>
+                    </li>
+                    <li class="list-group-item text-center make-order" [routerLink]="['/home/card']">
+                        <strong>Edytuj zamówienie</strong>
+                    </li>
+                </ul>
             </div>
         </div>
 

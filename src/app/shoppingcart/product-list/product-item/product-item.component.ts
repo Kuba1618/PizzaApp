@@ -18,6 +18,7 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   handleAddToCart() {
     this.msg.sendMsg(this.productItem)
     this.orderService.products.next(this.productItem)

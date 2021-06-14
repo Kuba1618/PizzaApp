@@ -157,7 +157,7 @@ nav{
     }
   }
 footer{
-        padding-top: 4rem;
+        padding-top: 8rem;
       width: 100%;
       background: whitesmoke
   }
@@ -276,6 +276,7 @@ h6 {
 .about-data{
     float: left;
     margin-left: 3.5%;
+    min-height: 300px;
     margin-top: 40px;
     margin-bottom: 25px;
     text-align: center;
@@ -306,3 +307,5 @@ h6 {
 .about-data-section ul{
     list-style: none;
 }
+
+

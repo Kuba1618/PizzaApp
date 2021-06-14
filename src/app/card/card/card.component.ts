@@ -11,6 +11,8 @@ export class CardComponent implements OnInit {
 
   title = 'Google Pay Demo';
 
+  cartItems: any[] = []
+
   credentials = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     surname: ['', [Validators.required, Validators.minLength(3)]],
@@ -20,7 +22,7 @@ export class CardComponent implements OnInit {
     houseNumber: ['', [Validators.required, Validators.minLength(3)]],
   })
 
-  amount = '';
+  amount = '0';
   amount2 = localStorage.getItem('amount')
 
   constructor(private formBuilder: FormBuilder, private orderService: OrderService) { }
@@ -30,6 +32,11 @@ export class CardComponent implements OnInit {
       let tmp = JSON.stringify(res)
       this.amount = tmp
     })
+
+    if (localStorage.getItem('array')) {
+      this.cartItems = JSON.parse(localStorage.getItem('array') || '')
+      console.log(this.cartItems)
+    }
   }
 
   paymentRequest: google.payments.api.PaymentDataRequest = {

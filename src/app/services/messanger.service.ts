@@ -22,10 +22,10 @@ export class MessangerService {
     return this.subject.asObservable()
   }
 
-  sendId(id:any){
-    this.idsend=id;
+  sendId(id: any) {
+    this.idsend = id;
   }
-  getId(){
+  getId() {
     return this.idsend;
   }
 }
