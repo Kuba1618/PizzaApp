@@ -54,8 +54,12 @@
                             </div>
                             <div class="form-group">
                                 <label class="login-label">Nr domu</label>
-                                <input type="text" class="form-control" formControlName="numberHouse" required>
+                                <input type="text" class="form-control" formControlName="houseNumber" required>
                             </div>
+                                <button class="btn btn-primary" 
+                                    (click)="checkDelievery()">
+                                    Sprawdź
+                                </button>
                         </form>
                     </div>
                 </div>
