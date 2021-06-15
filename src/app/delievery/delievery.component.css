@@ -77,3 +77,36 @@ footer ul li{
     margin-right: 20px;
     margin-left: -20px;
 }
+
+.img-wrap{
+    background: url('../../assets/img/registerwallpaper.jpg') center fixed;
+    border-radius: 30px;
+    background-size: cover;
+    min-width: 400px;
+    height: 700px;
+}
+
+.login-label{
+    color: floralwhite;
+}
+
+.container{
+    text-align: center;
+}
+
+.row{
+    padding-top: 50px;
+}
+
+.form-group{
+    padding-top: 12px;
+}
+
+.btn-primary{
+    margin-top: 30px;
+    background-color: rgb(212, 149, 65);
+    border-color: rgb(109, 107, 107);
+    color: rgb(255, 255, 255);
+    width: 200px;
+    height: 150;
+}
