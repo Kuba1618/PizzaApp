@@ -103,8 +103,10 @@ footer ul li{
 }
 
 .btn-primary{
-    margin-top: 20px;
+    margin-top: 30px;
     background-color: rgb(212, 149, 65);
     border-color: rgb(109, 107, 107);
     color: rgb(255, 255, 255);
+    width: 200px;
+    height: 150;
 }

@@ -54,3 +54,11 @@ button{
     width: 100%;
     margin-bottom: 5px;
 }
+
+.signin-button{
+    margin-top: 15px;
+    background: url('../../../assets/img/GoogleButtonPizzaApp.JPG');
+    height: 40px;
+    border-color: rgb(117, 123, 128);
+    border-width: 1px;
+}
