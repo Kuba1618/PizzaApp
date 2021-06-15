@@ -57,8 +57,14 @@ button{
 
 .signin-button{
     margin-top: 15px;
-    background: url('../../../assets/img/GoogleButtonPizzaApp.JPG');
+    background: url('../../../assets/img/GoogleButtonPizzaApp.jpg');
     height: 40px;
     border-color: rgb(117, 123, 128);
     border-width: 1px;
+}
+
+.create-account{
+    font-size: 21px;
+    margin-left:  190px;
+    color: rgb(0, 26, 255);
 }
