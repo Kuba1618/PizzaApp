@@ -38,7 +38,7 @@ export class OrderService {
 
   getPopularPizza(): Observable<Pizza[]> {
     return this.http.get<Pizza[]>(`${this.baseUrl}/api/pizza/get`).pipe(
-      map(data => data.filter(data => +data.price <= 19))
+      map(data => data.filter(data => +data.price <= 30))
     )
   }
 }

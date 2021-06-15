@@ -3,6 +3,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { OrderService } from '../services/order.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DelieveryCheckService } from './delievery-check.service';
+import { LocationDelivery } from '../models/location';
 
 @Component({
   selector: 'app-delievery',
@@ -13,7 +14,9 @@ export class DelieveryComponent implements OnInit {
 
   cartTotal: any;
   isLoggedUser!: boolean;
-  answer: any;
+  answer!: boolean
+  delivery = false;
+  deliveryN = false;
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -51,8 +54,14 @@ export class DelieveryComponent implements OnInit {
       houseNumber: this.credentials.controls.houseNumber.value
     };
     this.delieveryService.checkDelievery(delieveryData).subscribe((res)=>{
-      this.answer = res;
-      console.log(this.answer);
+
+      if(res == true){
+        this.delivery = true
+        this.deliveryN = false
+      }else{
+        this.deliveryN = true
+        this.delivery = false
+      }
     }, (err) => {
     });
 
