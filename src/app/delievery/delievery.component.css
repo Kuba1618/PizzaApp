@@ -84,6 +84,7 @@ footer ul li{
     background-size: cover;
     min-width: 400px;
     height: 700px;
+    margin-top: 6rem;
 }
 
 .login-label{
