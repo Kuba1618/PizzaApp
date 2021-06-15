@@ -10,6 +10,8 @@ import { HomeComponent } from './home.component';
 import { ContactComponent } from '../contact/contact.component';
 import { AuthAdminGuard } from '../guards/auth-admin.guard';
 import { DelieveryComponent } from '../delievery/delievery.component';
+import { OrderStatusComponent } from '../card/order-status/order-status.component';
+import { RejectOrderComponent } from '../card/reject-order/reject-order.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,11 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent }
     ]
   },
-  { path: 'card', component: ShoppingcartComponent, canActivate: [AuthGuard] },
+  {
+    path: 'card', component: ShoppingcartComponent, canActivate: [AuthGuard]
+  },
+  { path: 'statusOrder', component: OrderStatusComponent, canActivate: [AuthGuard] },
+  { path: 'rejectOrder', component: RejectOrderComponent, canActivate: [AuthGuard] },
   { path: 'burgermenu', component: BurgerMenuComponent },
   { path: 'pay', component: CardComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },

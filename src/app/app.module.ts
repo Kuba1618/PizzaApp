@@ -25,6 +25,8 @@ import { FilterPipe } from './shoppingcart/filters/filter.pipe';
 import { FilterNamePipe } from './shoppingcart/filters/filter-name.pipe';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
 import { DelieveryComponent } from './delievery/delievery.component';
+import { OrderStatusComponent } from './card/order-status/order-status.component';
+import { RejectOrderComponent } from './card/reject-order/reject-order.component';
 
 
 
@@ -49,7 +51,9 @@ import { DelieveryComponent } from './delievery/delievery.component';
     FilterPipe,
     FilterNamePipe,
     CardComponent,
-    DelieveryComponent
+    DelieveryComponent,
+    OrderStatusComponent,
+    RejectOrderComponent
   ],
   imports: [
     BrowserModule,
