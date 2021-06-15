@@ -15,7 +15,10 @@ export class DelieveryCheckService{
     constructor(private http: HttpClient) {}
 
     checkDelievery(data: { city: any; street: any; houseNumber: any; }) {
-        return this.http.post(`${this.baseUrl}/delievery/check`, data)
+        console.log(data);
+        console.log(Response.toString);
+        console.log(this.http.post(`${this.baseUrl}/delivery/check`, data));
+        return this.http.post(`${this.baseUrl}/delivery/check`, data);
       }
 
 }

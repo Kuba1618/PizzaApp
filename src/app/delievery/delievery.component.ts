@@ -13,6 +13,7 @@ export class DelieveryComponent implements OnInit {
 
   cartTotal: any;
   isLoggedUser!: boolean;
+  answer: any;
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -24,7 +25,7 @@ export class DelieveryComponent implements OnInit {
   credentials = this.formBuilder.group({
     city: ['', [Validators.required, Validators.minLength(3)]],
     street: ['', [Validators.required, Validators.minLength(3)]],
-    houseNumber: ['', [Validators.required, Validators.minLength(3)]],
+    houseNumber: ['', [Validators.required, Validators.minLength(1)]],
   })
 
   ngOnInit(): void {
@@ -50,6 +51,8 @@ export class DelieveryComponent implements OnInit {
       houseNumber: this.credentials.controls.houseNumber.value
     };
     this.delieveryService.checkDelievery(delieveryData).subscribe((res)=>{
+      this.answer = res;
+      console.log(this.answer);
     }, (err) => {
     });
 
