@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { OrderService } from '../../services/order.service';
 import { OrderAddService } from './order-add.service';
 
@@ -11,7 +12,7 @@ import { OrderAddService } from './order-add.service';
 export class CardComponent implements OnInit {
 
   title = 'Google Pay Demo';
-  item:any []=[]
+  item: any[] = []
   id: any;
   cartItems: any[] = []
 
@@ -23,11 +24,11 @@ export class CardComponent implements OnInit {
     street: ['', [Validators.required, Validators.minLength(3)]],
     houseNumber: ['', [Validators.required, Validators.minLength(3)]],
   })
-
   amount = '0';
   amount2 = localStorage.getItem('amount')
 
-  constructor(private formBuilder: FormBuilder, private orderService: OrderService, private orderAddService: OrderAddService) { }
+  constructor(private formBuilder: FormBuilder, private orderService: OrderService, private orderAddService: OrderAddService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.orderService.amountToPay.subscribe((res) => {
@@ -86,22 +87,27 @@ export class CardComponent implements OnInit {
   ) => {
     console.log('payment authorized', paymentData);
     this.createOrder()
+    localStorage.removeItem('amount')
+    localStorage.removeItem('array')
+    this.orderService.amountToPay.next(0)
+    this.router.navigate(['/home/statusOrder'])
     return {
       transactionState: 'SUCCESS'
     };
   }
 
   onError = (event: ErrorEvent): void => {
+    this.router.navigate(['/home'])
     console.error('error', event.error);
   }
 
-  createOrder(){
-this.item=[]
-    this.cartItems.forEach(el=>{
-   this.item.push(el.productName + " x " + el.qty)
-  })
+  createOrder() {
+    this.item = []
+    this.cartItems.forEach(el => {
+      this.item.push(el.productName + " x " + el.qty)
+    })
 
-    const orderData={
+    const orderData = {
       name: this.credentials.controls.name.value,
       surname: this.credentials.controls.surname.value,
       city: this.credentials.controls.city.value,
@@ -112,12 +118,12 @@ this.item=[]
       payment: "TAK",
       content: this.item
     };
-    this.orderAddService.addOrder(orderData).subscribe((res)=>{
+    this.orderAddService.addOrder(orderData).subscribe((res) => {
       console.log(res)
     },
-    (err)=>{
-      
-    }
+      (err) => {
+
+      }
     );
   }
 }

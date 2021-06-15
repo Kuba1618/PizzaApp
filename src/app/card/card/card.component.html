@@ -39,8 +39,7 @@
                                     <google-pay-button environment="TEST" buttonType="buy" buttonColor="black"
                                         buttonSizeMode="fill" [paymentRequest]="paymentRequest"
                                         (loadpaymentdata)="onLoadPaymentData($event)" (error)="onError($event)"
-                                        [paymentAuthorizedCallback]="onPaymentDataAuthorized"
-                                        >
+                                        [paymentAuthorizedCallback]="onPaymentDataAuthorized">
                                     </google-pay-button>
 
                                     <button class="btn btn-primary" [routerLink]="['/home']">
