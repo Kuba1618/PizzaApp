@@ -24,7 +24,7 @@ export class AuthAdminGuard implements CanActivate {
       roleType = role;
     })
 
-    if (roleType == "ROLE_ADMIN") return true;
+    if (roleType == "ROLE_USER") return true;
     else {
       this.router.navigate([''])
       return false;

@@ -3,8 +3,10 @@
 
     <a class="navbar-brand py-0" routerLink=''>
 
-      <h1><span class="logo">Pizza</span>App</h1>
+      <h1><span class="logo">Pizza- Fijalkowski </span></h1>
     </a>
+   
+
 
     <div class="user-and-item justify-content-end py-0 p-4">
       <div class="navbar-items">
@@ -58,7 +60,7 @@
       <div class="row">
         <h2 class="title-top">Oferty dla Ciebie:</h2>
         <ul *ngIf="pizzas" class="list-inline">
-          <li *ngFor="let pizza of popularPizzas" class="list-inline-item">
+          <li *ngFor="let pizza of popularPizzas" class="list-inline-item" [routerLink]="['/home/card']" routerLinkActive="router-link-active">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="../../assets/img/first.jpg" alt="Card image cap">
               <div class="card-body">
@@ -84,7 +86,7 @@
     <div class="container">
       <div class="row pb-5">
         <ul *ngIf="pizzas" class="list-inline">
-          <li *ngFor="let pizza of pizzas" class="list-inline-item">
+          <li *ngFor="let pizza of pizzas" class="list-inline-item" [routerLink]="['/home/card']" routerLinkActive="router-link-active">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="../../assets/img/first.jpg" alt="Card image cap">
               <div class="card-body">
@@ -135,7 +137,7 @@
     <div class="data-header"> 
       <h3>Zadzwoń do nas </h3>
       <div class="data">
-          Telefon:  <a href="tel:987654321">987-654-321</a>
+          Telefon:  <a href="tel:987654321">987-***-321</a>
       </div>
     </div>
   </div>
@@ -148,26 +150,12 @@
       <h3>Godziny otwarcia</h3>
       <ul>
           <li>
-              poniedziałek 13:00 - 22:00
+              poniedziałek-piątek 13:00 - 22:00
           </li>
           <li>
-              wtorek 11:00 - 22:00
-          </li>
-          <li>
-              środa 11:00 - 22:00
-          </li>
-          <li>
-              czwartek 11:00 - 22:00
-          </li>
-          <li>
-              piątek 11:00 - 00:00
-          </li>
-          <li>
-              sobota 11:00 - 00:00 
-          </li>
-          <li>
-              niedziela 14:00 - 22:00
-          </li>
+              sobota-niedziela 13:00 - 24:00
+        </li>
+          
       </ul>
       </div>
   </div>
@@ -179,8 +167,7 @@
 
     <div class="data">
       <h3>Zamów online</h3>
-      <h5>Zobacz menu <br></h5>
-      <div id="komentarz">(Zrobić przycisk)</div>
+      <h5 style="cursor: pointer;" [routerLink]="['/shoppingcart']" routerLinkActive="router-link-active">Złóż zamówienie</h5>
     </div>
   </div>
   <div id="clear"></div>
@@ -204,7 +191,7 @@
             Angular
           </li>
           <li>
-            Node.JS
+            Spring Boot
           </li>
           <li>
             MongoDB
@@ -217,18 +204,7 @@
           <li>
             Dawid Fijałkowski
           </li>
-          <li>
-            Dawid Milewski
-          </li>
-          <li>
-            Daniel Ostrowski
-          </li>
-          <li>
-            Jakub Prusicki
-          </li>
-          <li>
-            Weronika Wolszczak
-          </li>
+          
         </ul>
       </div>
       <div class="col-md-4 text-center  py-4">

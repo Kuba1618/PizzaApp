@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+
 .fa-user,
 .fa-shopping-basket,
 .fa-sign-in-alt
@@ -75,12 +78,16 @@ h3{
 }
 
 .navbar-brand h1{
-    font-family: "Brush Script MT", cursive; font-style: italic; font-variant: normal; font-weight: 700; line-height: 30.4px;
+    font-family: 'Style Script', cursive;
 }
 
-.logo{
-    color: red; 
+
+@media screen and (max-width: 500px) {
+    .navbar-brand h1{
+        display: none;
+    }
 }
+
 
 nav{
     border-bottom: 1px solid rgba(97, 97, 97, .4)
@@ -312,7 +319,7 @@ h6 {
 }
 
 .icon{
-    font-size: 58px;
-    color:rgb(255, 30, 0);
+    font-size: 40px;
+    color: goldenrod;
 }
 

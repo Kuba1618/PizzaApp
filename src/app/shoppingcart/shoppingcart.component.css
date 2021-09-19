@@ -1,11 +1,4 @@
-.navbar-brand h1{
-    font-family: "Brush Script MT", cursive; font-style: italic; font-variant: normal; font-weight: 700; line-height: 26.4px;
-}
-
-.logo{
-    color: red;
-    
-}
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 
 nav{
     height: 80px;
@@ -80,4 +73,8 @@ footer ul li{
 
 .row{
     max-width: 100%;
+}
+
+.navbar-brand h1{
+    font-family: 'Style Script', cursive;
 }

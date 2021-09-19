@@ -5,6 +5,7 @@ import { SocialAuthService } from 'angularx-social-login';
 import { Observable } from 'rxjs';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import { PizzaService } from '../admin/list/pizza.service';
+import { Order } from '../models/order';
 import { Pizza } from '../models/pizza';
 import { AuthenticationService } from '../services/authentication.service';
 import { OrderService } from '../services/order.service';
@@ -24,11 +25,12 @@ export class HomeComponent implements OnInit {
   popularPizzas: Pizza[] = [];
   pizzas: Pizza[] = []
 
-  constructor(private config: NgbCarouselConfig, private pizzaService: PizzaService, private authService: AuthenticationService, private socialAuthService: SocialAuthService, private orderService: OrderService) {
+  constructor(private config: NgbCarouselConfig, private x: Order, private pizzaService: PizzaService, private authService: AuthenticationService, private socialAuthService: SocialAuthService, private orderService: OrderService) {
     config.interval = 10000;
     config.wrap = false;
     config.keyboard = false;
     config.pauseOnHover = false;
+
 
   }
 

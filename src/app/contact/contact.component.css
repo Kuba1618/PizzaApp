@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
 .navbar-brand h1{
-    font-family: "Brush Script MT", cursive; font-style: italic; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    font-family: 'Style Script', cursive;
 }
 
-.logo{
-    color: red;
-    
+
+@media screen and (max-width: 500px) {
+    .navbar-brand h1{
+        display: none;
+    }
 }
 
 nav{
@@ -69,7 +73,7 @@ footer ul li{
 
 #lblCartCount {
     font-size: 12px;
-    background: #ff0000;
+    background: #000000;
     color: #fff;
     padding: 0 5px;
     vertical-align: top;
@@ -105,16 +109,17 @@ footer ul li{
 
 .about-data-section ul{
     list-style: none;
-    font-size: 19px;
+    font-size: 15px;
 }
 
 .data{
-    font-size: 19px;
+    font-size: 15px;
 }
 
 .icon{
-    font-size: 58px;
-    color:rgb(255, 30, 0);
+    font-size: 40px;
+    color: rgb(197, 168, 0);
+   
 }
 
 
@@ -124,10 +129,6 @@ footer ul li{
 
 h3{
     font-size:larger;
-}
-
-h4{
-    color: rgb(255, 0, 0); 
 }
 
 /*h6 { font-weight:normal; }*/
@@ -220,6 +221,6 @@ a:active
 }
 
 .nav-info{
-    color: rgb(255, 0, 0); 
+  
     margin-top: 24px;
 }

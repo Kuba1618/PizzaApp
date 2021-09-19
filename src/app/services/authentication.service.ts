@@ -53,7 +53,7 @@ export class AuthenticationService {
         this.generateAndStoreUserDetails(this.token);
         localStorage.setItem('my-token', this.token);
         this.userService.getUserDetails().roles.forEach(role => {
-          if (role === "ROLE_ADMIN") {
+          if (role === "ROLE_USER") {
             localStorage.setItem('admin', 'admin')
             this.isAdmin.next(true)
           }
